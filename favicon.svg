@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0D1117"/>
+  <rect x="9" y="9" width="46" height="46" rx="7" fill="none" stroke="#D4A24C" stroke-width="2.6"/>
+  <path d="M5 11 V5 H11" fill="none" stroke="#D4A24C" stroke-width="2"/>
+  <path d="M59 53 V59 H53" fill="none" stroke="#D4A24C" stroke-width="2"/>
+  <text x="32" y="40" font-family="'IBM Plex Mono', 'Courier New', monospace" font-weight="700" font-size="20" fill="#D4A24C" text-anchor="middle">SM</text>
+</svg>
