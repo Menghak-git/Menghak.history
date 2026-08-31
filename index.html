@@ -1264,8 +1264,7 @@
     }
 
     const saved = getSavedTheme();
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+    applyTheme(saved === 'light' ? 'light' : 'dark');
 
     toggles.forEach(btn => {
       if(!btn) return;
