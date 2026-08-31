@@ -1,3018 +1,1498 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sao Menghak</title>
-  <meta name="description" content="Explore Cambodian history, stories, culture, and important historical information.">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sao Menghak — PNC Student Portfolio</title>
-  <meta name="description"
-    content="Sao Menghak — PNC Student & Future Web Developer. Portfolio, skills, projects and goals.">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="favicon.svg">
-  <link rel="apple-touch-icon" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <meta name="google-site-verification" content="IqGjqMMGnrCMU-8X-6IHisunZyGX9Z61LhlzcvseH_I" />
-  <style>
-    :root {
-      --ink: #0D1117;
-      --navy: #132437;
-      --navy-2: #1B3350;
-      --paper: #FAF6EC;
-      --paper-2: #F1EAD9;
-      --line: rgba(255, 255, 255, 0.14);
-      --line-soft: rgba(255, 255, 255, 0.07);
-      --paper-line: rgba(20, 30, 25, 0.14);
-      --gold: #D4A24C;
-      --gold-light: #F0C878;
-      --teal: #3FB6A8;
-      --slate: #6E86A8;
-      --text: #20241F;
-      --text-dark: #EFEAE0;
-      --muted: #6B6559;
-      --muted-dark: #9AA6B4;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-sm: 8px;
-      --shadow-sm: 0 2px 10px rgba(13, 17, 23, 0.08);
-      --shadow-md: 0 14px 34px rgba(13, 17, 23, 0.14);
-      --ease: cubic-bezier(.22, 1, .36, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--paper);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    section {
-      position: relative;
-      padding: 110px 8vw;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .mono {
-      font-family: 'IBM Plex Mono', monospace;
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    /* ---------- Blueprint grid backgrounds ---------- */
-    .grid-dark {
-      background-color: var(--ink);
-      background-image:
-        linear-gradient(var(--line-soft) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-      background-size: 44px 44px;
-    }
-
-    .grid-paper {
-      background-color: var(--paper);
-      background-image:
-        linear-gradient(var(--paper-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .crop-mark {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      pointer-events: none;
-      opacity: .55;
-      z-index: 2;
-    }
-
-    .crop-mark::before,
-    .crop-mark::after {
-      content: "";
-      position: absolute;
-      background: var(--gold);
-    }
-
-    .crop-mark::before {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1.5px;
-      transform: translateY(-50%);
-    }
-
-    .crop-mark::after {
-      left: 50%;
-      top: 0;
-      height: 100%;
-      width: 1.5px;
-      transform: translateX(-50%);
-    }
-
-    .cm-tl {
-      top: 22px;
-      left: 22px;
-    }
-
-    .cm-tr {
-      top: 22px;
-      right: 22px;
-    }
-
-    .cm-bl {
-      bottom: 22px;
-      left: 22px;
-    }
-
-    .cm-br {
-      bottom: 22px;
-      right: 22px;
-    }
-
-    /* ---------- Utility ---------- */
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: .72rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 26px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .eyebrow .leaf {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--paper-line), transparent);
-    }
-
-    .goals .eyebrow .leaf,
-    .hero .eyebrow .leaf {
-      background: linear-gradient(90deg, var(--line), transparent);
-    }
-
-    .section-head {
-      max-width: 640px;
-      margin-bottom: 56px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.7rem, 3.3vw, 2.35rem);
-      margin-bottom: 12px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .goals .section-head p {
-      color: var(--muted-dark);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 26px;
-      border-radius: 2px;
-      font-weight: 600;
-      font-size: .88rem;
-      font-family: 'IBM Plex Mono', monospace;
-      letter-spacing: .03em;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s, border-color .3s;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #211705;
-      box-shadow: 0 8px 20px rgba(212, 162, 76, 0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(212, 162, 76, 0.4);
-      background: var(--gold-light);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-dark);
-      border: 1.5px solid var(--line);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-3px);
-    }
-
-    .btn-outline.on-paper {
-      color: var(--text);
-      border-color: var(--paper-line);
-    }
-
-    .btn-outline.on-paper:hover {
-      border-color: var(--gold);
-      color: #8A651F;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s var(--ease), transform .8s var(--ease);
-    }
-
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger>* {
-      transition-delay: calc(var(--i, 0) * 90ms);
-    }
-
-    /* ---------- Navbar ---------- */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(13, 17, 23, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid transparent;
-      transition: all .35s var(--ease);
-    }
-
-    header.scrolled {
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 20px 6vw;
-      transition: padding .35s var(--ease);
-    }
-
-    header.scrolled nav {
-      padding: 13px 6vw;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border: 1.5px solid var(--gold);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: var(--gold);
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .brand-mark::before,
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border: 1px solid var(--gold);
-    }
-
-    .brand-mark::before {
-      top: -3px;
-      left: -3px;
-    }
-
-    .brand-mark::after {
-      bottom: -3px;
-      right: -3px;
-    }
-
-    .brand-text {
-      line-height: 1.2;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #fff;
-    }
-
-    .brand-text span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      color: var(--muted-dark);
-      letter-spacing: .06em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-links a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .78rem;
-      font-weight: 500;
-      letter-spacing: .04em;
-      color: var(--muted-dark);
-      position: relative;
-      padding: 4px 0;
-      text-transform: uppercase;
-      transition: color .25s;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 1.5px;
-      background: var(--gold);
-      transition: width .3s var(--ease);
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      width: 28px;
-      z-index: 1100;
-    }
-
-    .hamburger span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background: var(--gold);
-      border-radius: 1px;
-      transition: all .3s var(--ease);
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 78%;
-      max-width: 340px;
-      height: 100vh;
-      background: var(--navy);
-      z-index: 1050;
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.35);
-      padding: 100px 32px 32px;
-      transition: right .4s var(--ease);
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      border-left: 1px solid var(--line);
-    }
-
-    .mobile-menu.open {
-      right: 0;
-    }
-
-    .mobile-menu a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 8, 12, 0.6);
-      z-index: 1040;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .35s;
-    }
-
-    .overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      padding: 172px 8vw 120px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      color: var(--text-dark);
-    }
-
-    .hero-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-      padding: 8px 16px;
-      border-radius: 2px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .74rem;
-      letter-spacing: .04em;
-      font-weight: 600;
-      color: var(--muted-dark);
-      margin-bottom: 26px;
-      text-transform: uppercase;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 0 4px rgba(63, 182, 168, 0.2);
-      animation: pulse-dot 2s infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: .4;
-      }
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 4.2vw, 3.2rem);
-      line-height: 1.14;
-      margin-bottom: 16px;
-      color: #fff;
-    }
-
-    .hero h1 .accent-text {
-      color: var(--gold);
-    }
-
-    /* ---------- Hero heading entrance animation ---------- */
-    .hero h1.hero-heading {
-      perspective: 600px;
-    }
-
-    .hero h1.hero-heading .word {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(38px) rotateX(-55deg);
-      transform-origin: 50% 100%;
-      animation: word-in .85s var(--ease) forwards;
-      animation-delay: calc(var(--w) * .1s + .15s);
-      will-change: transform, opacity;
-    }
-
-    @keyframes word-in {
-      to {
-        opacity: 1;
-        transform: translateY(0) rotateX(0);
-      }
-    }
-
-    .hero h1.hero-heading .word.accent-text {
-      color: var(--gold);
-      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 22%, var(--gold) 44%, var(--gold) 100%);
-      background-size: 220% auto;
-      background-position: 0% center;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: word-in .85s var(--ease) forwards, shimmer 3.2s linear infinite;
-      animation-delay: calc(var(--w) * .1s + .15s), 1.4s;
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: 0% center;
-      }
-
-      100% {
-        background-position: 220% center;
-      }
-    }
-
-    .hero .role {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--muted-dark);
-      margin-bottom: 24px;
-      letter-spacing: .02em;
-    }
-
-    .hero .role strong {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .hero p.lead {
-      color: var(--muted-dark);
-      font-size: 1.01rem;
-      max-width: 500px;
-      margin-bottom: 36px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero-visual {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 460px;
-    }
-
-    /* Title-block card — the signature element */
-    .title-block {
-      position: relative;
-      width: 330px;
-      background: var(--navy);
-      border: 1px solid var(--line);
-      z-index: 5;
-      animation: float-main 6.5s ease-in-out infinite;
-    }
-
-    @keyframes float-main {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    .tb-photo {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 1/1;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tb-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 15%;
-      display: block;
-    }
-
-    .photo-frame {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .photo-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--ink);
-      transform-origin: right;
-      transform: scaleX(1);
-      transition: transform 1.1s var(--ease);
-      z-index: 3;
-    }
-
-    .photo-frame.revealed::after {
-      transform: scaleX(0);
-    }
-
-    .photo-frame::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(13, 17, 23, 0) 55%, rgba(13, 17, 23, 0.4) 100%);
-    }
-
-    .tb-rows {
-      padding: 2px 0;
-    }
-
-    .tb-row {
-      display: grid;
-      grid-template-columns: 34% 66%;
-      border-top: 1px solid var(--line);
-    }
-
-    .tb-row .k {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .62rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--muted-dark);
-      padding: 10px 12px;
-      border-right: 1px solid var(--line);
-    }
-
-    .tb-row .v {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      color: #fff;
-      padding: 10px 12px;
-      font-weight: 500;
-    }
-
-    .tb-row .v.gold {
-      color: var(--gold);
-    }
-
-    .float-card {
-      position: absolute;
-      background: var(--navy);
-      padding: 11px 15px;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      border: 1px solid var(--line);
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: .74rem;
-      color: var(--muted-dark);
-      z-index: 6;
-    }
-
-    .fc-icon {
-      font-size: 1rem;
-    }
-
-    .fc-1 {
-      top: 2%;
-      right: -4%;
-      animation: float-a 5s ease-in-out infinite;
-    }
-
-    .fc-2 {
-      bottom: 16%;
-      left: -10%;
-      animation: float-b 5.5s ease-in-out infinite;
-    }
-
-    .fc-3 {
-      bottom: -4%;
-      right: 8%;
-      animation: float-c 6.5s ease-in-out infinite;
-    }
-
-    @keyframes float-a {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0);
-      }
-
-      50% {
-        transform: translateY(-14px) rotate(-1deg);
-      }
-    }
-
-    @keyframes float-b {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(12px);
-      }
-    }
-
-    @keyframes float-c {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0);
-      }
-
-      50% {
-        transform: translateY(-10px) rotate(1deg);
-      }
-    }
-
-    /* ---------- Quick info ---------- */
-    .quick-info {
-      padding: 0 8vw 100px;
-      margin-top: -46px;
-      position: relative;
-      z-index: 8;
-    }
-
-    .info-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--paper-line);
-      border: 1px solid var(--paper-line);
-    }
-
-    .info-card {
-      background: var(--paper);
-      padding: 26px 22px;
-      transition: background .3s var(--ease);
-    }
-
-    .info-card:hover {
-      background: var(--paper-2);
-    }
-
-    .info-card .label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .7rem;
-      color: var(--muted);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 8px;
-    }
-
-    .info-card .value {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--ink);
-    }
-
-    /* ---------- About ---------- */
-    .about {
-      background: var(--paper);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 50px;
-      align-items: start;
-    }
-
-    .about-photo {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--paper-line);
-      aspect-ratio: 3/4;
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 12%;
-    }
-
-    .about p {
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 1.02rem;
-    }
-
-    .about-card {
-      background: transparent;
-      border: 1px solid var(--paper-line);
-      padding: 0;
-    }
-
-    .about-card h4 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      padding: 16px 22px;
-      border-bottom: 1px solid var(--paper-line);
-    }
-
-    .about-row {
-      display: grid;
-      grid-template-columns: 38% 62%;
-      border-top: 1px solid var(--paper-line);
-    }
-
-    .about-row:first-of-type {
-      border-top: none;
-    }
-
-    .about-row .k {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      color: var(--muted);
-      font-weight: 500;
-      padding: 13px 22px;
-      border-right: 1px solid var(--paper-line);
-      text-transform: uppercase;
-      letter-spacing: .03em;
-    }
-
-    .about-row .v {
-      font-weight: 600;
-      color: var(--ink);
-      padding: 13px 22px;
-      font-size: .92rem;
-    }
-
-    /* ---------- Education ---------- */
-    .education-head-card {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      background: transparent;
-      border: 1px solid var(--paper-line);
-      padding: 26px 30px;
-      margin-bottom: 60px;
-    }
-
-    .edu-badge {
-      width: 58px;
-      height: 58px;
-      border: 1.5px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      color: var(--gold);
-      position: relative;
-    }
-
-    .edu-badge::before,
-    .edu-badge::after {
-      content: "";
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border: 1px solid var(--gold);
-    }
-
-    .edu-badge::before {
-      top: -4px;
-      left: -4px;
-    }
-
-    .edu-badge::after {
-      bottom: -4px;
-      right: -4px;
-    }
-
-    .education-head-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 4px;
-    }
-
-    .education-head-card .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--gold);
-      font-weight: 600;
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 8px;
-      display: inline-block;
-    }
-
-    .education-head-card p {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 40px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 9px;
-      top: 6px;
-      bottom: 6px;
-      width: 1px;
-      background: repeating-linear-gradient(var(--gold), var(--gold) 4px, transparent 4px, transparent 9px);
-    }
-
-    .t-item {
-      position: relative;
-      padding-bottom: 42px;
-    }
-
-    .t-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .t-dot {
-      position: absolute;
-      left: -40px;
-      top: 2px;
-      width: 19px;
-      height: 19px;
-      background: var(--paper);
-      border: 1.5px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .t-dot::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      background: var(--gold);
-    }
-
-    .t-item.in-view .t-dot {
-      animation: dot-pop .5s var(--ease);
-    }
-
-    @keyframes dot-pop {
-      0% {
-        transform: scale(0);
-      }
-
-      70% {
-        transform: scale(1.25);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .t-item .t-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      color: var(--gold);
-      letter-spacing: .06em;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .t-item h4 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-    }
-
-    .t-item p {
-      color: var(--muted);
-      font-size: .92rem;
-      max-width: 520px;
-    }
-
-    /* ---------- Skills ---------- */
-    .skills {
-      background: var(--paper-2);
-    }
-
-    .skills-cols {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .skill-item {
-      margin-bottom: 26px;
-    }
-
-    .skill-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-
-    .skill-top .sname {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: .86rem;
-      color: var(--ink);
-      text-transform: uppercase;
-      letter-spacing: .02em;
-    }
-
-    .skill-top .spct {
-      font-weight: 700;
-      color: var(--gold);
-      font-size: .82rem;
-    }
-
-    .bar-track {
-      width: 100%;
-      height: 7px;
-      background: var(--paper-line);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bar-track::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(0, 0, 0, 0.06) 9px, rgba(0, 0, 0, 0.06) 10px);
-      z-index: 2;
-    }
-
-    .bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      transition: width 1.2s var(--ease);
-    }
-
-    .soft-title {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .soft-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--paper-line);
-      border: 1px solid var(--paper-line);
-    }
-
-    .soft-card {
-      background: var(--paper-2);
-      padding: 20px 16px;
-      text-align: center;
-      transition: background .3s var(--ease);
-    }
-
-    .soft-card:hover {
-      background: var(--paper);
-    }
-
-    .soft-card .si {
-      margin-bottom: 10px;
-      color: var(--gold);
-    }
-
-    .soft-card .si svg {
-      width: 30px;
-      height: 30px;
-      display: block;
-    }
-
-    .soft-card:hover .si {
-      color: #8A651F;
-    }
-
-    .soft-card .sl {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: .76rem;
-      color: var(--ink);
-      text-transform: uppercase;
-      letter-spacing: .02em;
-    }
-
-    /* ---------- Projects ---------- */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--paper-line);
-      border: 1px solid var(--paper-line);
-    }
-
-    .project-card {
-      background: var(--paper);
-      overflow: hidden;
-      transition: transform .3s var(--ease);
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .project-thumb {
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 16px 18px;
-      background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 12px);
-    }
-
-    .thumb-1 {
-      background-color: var(--navy-2);
-    }
-
-    .thumb-2 {
-      background-color: #4A6B5C;
-    }
-
-    .thumb-3 {
-      background-color: #5A4A6B;
-    }
-
-    .project-thumb .p-num {
-      position: relative;
-      z-index: 2;
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.85);
-      font-size: .78rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .project-body {
-      padding: 24px 24px 26px;
-    }
-
-    .project-body h3 {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-    }
-
-    .project-body p {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-bottom: 18px;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .tech-tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      font-weight: 600;
-      color: var(--muted);
-      border: 1px solid var(--paper-line);
-      padding: 5px 9px;
-    }
-
-    .project-link {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      color: var(--ink);
-      font-size: .8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-    }
-
-    .view-all-wrap {
-      text-align: center;
-      margin-top: 48px;
-    }
-
-    /* ---------- Learning Journey ---------- */
-    .journey-track {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 36px;
-      position: relative;
-    }
-
-    .journey-track::before {
-      content: "";
-      position: absolute;
-      top: 17px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(90deg, var(--gold), var(--gold) 5px, transparent 5px, transparent 11px);
-      z-index: 0;
-    }
-
-    .j-step {
-      position: relative;
-    }
-
-    .j-num {
-      width: 36px;
-      height: 36px;
-      background: var(--paper);
-      border: 1.5px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-
-    .j-step h4 {
-      font-size: 1.02rem;
-      margin-bottom: 8px;
-    }
-
-    .j-step p {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    /* ---------- Goals ---------- */
-    .goals {
-      background: var(--ink);
-      color: var(--text-dark);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .goals .section-head h2 {
-      color: #fff;
-    }
-
-    .goals .section-head p {
-      color: var(--muted-dark);
-    }
-
-    .goals-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      margin-bottom: 70px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .goal-card {
-      background: var(--ink);
-      padding: 26px 22px;
-      transition: background .3s var(--ease);
-    }
-
-    .goal-card:hover {
-      background: var(--navy);
-    }
-
-    .goal-card .gtag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .goal-card h4 {
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .quote-block {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-      padding: 44px 20px 0;
-    }
-
-    .quote-block p {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.4rem, 3.2vw, 2.15rem);
-      color: #fff;
-    }
-
-    .quote-block .quote-mark {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      color: var(--gold);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .compass-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 38px;
-    }
-
-    .compass-wrap svg {
-      width: 120px;
-      animation: rocket-float 3.5s ease-in-out infinite;
-    }
-
-    @keyframes rocket-float {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(-2deg);
-      }
-
-      50% {
-        transform: translateY(-14px) rotate(2deg);
-      }
-    }
-
-    /* ---------- Achievements ---------- */
-    .ach-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
-
-    .ach-card {
-      border: 1px solid var(--paper-line);
-      padding: 28px 16px;
-      text-align: center;
-      transition: transform .3s var(--ease), border-color .3s;
-      position: relative;
-    }
-
-    .ach-card::before {
-      content: "";
-      position: absolute;
-      inset: 6px;
-      border: 1px dashed var(--paper-line);
-      pointer-events: none;
-      transition: border-color .3s;
-    }
-
-    .ach-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-    }
-
-    .ach-card:hover::before {
-      border-color: var(--gold-light);
-    }
-
-    .ach-card .ai {
-      font-size: 1.7rem;
-      margin-bottom: 12px;
-    }
-
-    .ach-card .al {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: .74rem;
-      color: var(--ink);
-      text-transform: uppercase;
-      letter-spacing: .02em;
-    }
-
-    /* ---------- Contact ---------- */
-    .contact {
-      background: var(--paper-2);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 56px;
-    }
-
-    .contact-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      margin-top: 30px;
-      background: var(--paper-line);
-      border: 1px solid var(--paper-line);
-    }
-
-    .c-card {
-      background: var(--paper-2);
-      padding: 20px;
-      transition: background .3s var(--ease);
-    }
-
-    .c-card:hover {
-      background: var(--paper);
-    }
-
-    .c-card .ci {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .c-card .cl {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--muted);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .c-card .cv {
-      font-weight: 600;
-      font-size: .88rem;
-      color: var(--ink);
-      word-break: break-word;
-    }
-
-    .form-card {
-      background: var(--paper);
-      border: 1px solid var(--paper-line);
-      padding: 36px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .field.full {
-      grid-column: 1/-1;
-    }
-
-    .field label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .7rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .field input,
-    .field textarea {
-      padding: 12px 4px;
-      border: none;
-      border-bottom: 1.5px solid var(--paper-line);
-      background: transparent;
-      font-family: 'Inter', sans-serif;
-      font-size: .92rem;
-      color: var(--text);
-      transition: border-color .25s;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    .field textarea {
-      resize: vertical;
-      min-height: 110px;
-    }
-
-    .field .err {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      color: #B23B3B;
-      min-height: 14px;
-    }
-
-    .field.invalid input,
-    .field.invalid textarea {
-      border-color: #B23B3B;
-    }
-
-    .form-submit {
-      width: 100%;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .form-success {
-      display: none;
-      align-items: center;
-      gap: 10px;
-      background: rgba(63, 182, 168, 0.1);
-      color: #2A7A6E;
-      border: 1px solid rgba(63, 182, 168, 0.35);
-      padding: 14px 18px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .82rem;
-      font-weight: 600;
-      margin-top: 16px;
-    }
-
-    .form-success.show {
-      display: flex;
-    }
-
-    .form-success.show-error {
-      background: rgba(178, 59, 59, 0.1);
-      color: #B23B3B;
-      border-color: rgba(178, 59, 59, 0.35);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      background: var(--ink);
-      color: var(--muted-dark);
-      padding: 70px 8vw 30px;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 44px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .footer-brand {
-      display: flex;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-
-    .footer-brand strong {
-      color: #fff;
-      font-family: 'Sora', sans-serif;
-      font-size: 1.02rem;
-    }
-
-    .footer-brand span {
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--muted-dark);
-      font-size: .72rem;
-    }
-
-    .footer-desc {
-      color: var(--muted-dark);
-      font-size: .86rem;
-      max-width: 320px;
-    }
-
-    .footer-col h5 {
-      color: #fff;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 18px;
-    }
-
-    .footer-col a {
-      display: block;
-      color: var(--muted-dark);
-      font-size: .86rem;
-      margin-bottom: 12px;
-      transition: color .25s;
-    }
-
-    .footer-col a:hover {
-      color: var(--gold);
-    }
-
-    .social-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .social-btn {
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted-dark);
-      transition: border-color .3s, color .3s, transform .3s;
-    }
-
-    .social-btn:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-4px);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding-top: 26px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .74rem;
-      color: var(--muted-dark);
-    }
-
-    /* ---------- Responsive ---------- */
-    @media(max-width:1024px) {
-      .info-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid,
-      .skills-cols,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .journey-track {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 44px;
-      }
-
-      .journey-track::before {
-        display: none;
-      }
-
-      .goals-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .ach-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 150px;
-      }
-
-      .hero-visual {
-        margin-top: 20px;
-        order: -1;
-        min-height: 400px;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-    }
-
-    @media(max-width:768px) {
-      section {
-        padding: 76px 6vw;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .nav-right .btn-primary.desktop-cv {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero {
-        padding: 130px 6vw 70px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .journey-track {
-        grid-template-columns: 1fr;
-      }
-
-      .goals-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .ach-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .quick-info {
-        margin-top: -24px;
-      }
-
-      .title-block {
-        width: 100%;
-        max-width: 330px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .soft-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media(max-width:480px) {
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .goals-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .ach-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .contact-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .fc-1,
-      .fc-2,
-      .fc-3 {
-        position: static;
-        margin-top: 10px;
-        display: inline-flex;
-      }
-    }
-
-    /* ---------- Hero ambient lighting ---------- */
-    .hero-glow {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(90px);
-      animation: glow-pulse 8s ease-in-out infinite;
-    }
-
-    .glow-gold {
-      width: 520px;
-      height: 520px;
-      top: -160px;
-      left: -120px;
-      background: radial-gradient(circle, rgba(212, 162, 76, 0.35) 0%, rgba(212, 162, 76, 0) 70%);
-      animation-delay: 0s;
-    }
-
-    .glow-teal {
-      width: 480px;
-      height: 480px;
-      bottom: -180px;
-      right: -100px;
-      background: radial-gradient(circle, rgba(63, 182, 168, 0.28) 0%, rgba(63, 182, 168, 0) 70%);
-      animation-delay: 2.5s;
-    }
-
-    @keyframes glow-pulse {
-
-      0%,
-      100% {
-        opacity: .7;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.12);
-      }
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      .hero-glow {
-        animation: none;
-      }
-    }
-
-    /* ---------- Lightning ---------- */
-    .lightning-layer {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .flash-overlay {
-      position: absolute;
-      inset: 0;
-      background: #EAF2FF;
-      opacity: 0;
-      mix-blend-mode: screen;
-    }
-
-    .flash-overlay.strike {
-      animation: flash-flicker 0.7s ease-out;
-    }
-
-    @keyframes flash-flicker {
-      0% {
-        opacity: 0;
-      }
-
-      4% {
-        opacity: .5;
-      }
-
-      9% {
-        opacity: .04;
-      }
-
-      14% {
-        opacity: .38;
-      }
-
-      22% {
-        opacity: 0;
-      }
-
-      32% {
-        opacity: .22;
-      }
-
-      42% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .bolt {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: auto;
-      opacity: 0;
-    }
-
-    .bolt-a {
-      left: 12%;
-    }
-
-    .bolt-b {
-      left: 68%;
-    }
-
-    .bolt.strike {
-      animation: bolt-flicker 0.7s ease-out;
-    }
-
-    @keyframes bolt-flicker {
-      0% {
-        opacity: 0;
-      }
-
-      4% {
-        opacity: 1;
-      }
-
-      9% {
-        opacity: .15;
-      }
-
-      14% {
-        opacity: 1;
-      }
-
-      22% {
-        opacity: .08;
-      }
-
-      32% {
-        opacity: .85;
-      }
-
-      42% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .bolt-main {
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.4;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 22px rgba(160, 205, 255, 0.75)) drop-shadow(0 0 46px rgba(120, 180, 255, 0.4));
-    }
-
-    .bolt-branch {
-      fill: none;
-      stroke: #dce9ff;
-      stroke-width: 1.1;
-      opacity: .75;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-      filter: drop-shadow(0 0 4px rgba(200, 225, 255, 0.7));
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      .lightning-layer {
-        display: none;
-      }
-    }
-
-    /* ---------- Snow ---------- */
-    .snow-layer {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .snowflake {
-      position: absolute;
-      top: -5vh;
-      border-radius: 50%;
-      background: radial-gradient(circle at 32% 30%, #ffffff 0%, rgba(255, 255, 255, .95) 35%, rgba(255, 255, 255, .35) 75%, rgba(255, 255, 255, 0) 100%);
-      box-shadow: 0 0 6px 1px rgba(255, 255, 255, .55), 0 0 2px rgba(255, 255, 255, .9);
-      will-change: transform;
-      animation-name: snow-fall, snow-sway;
-      animation-timing-function: linear, ease-in-out;
-      animation-iteration-count: infinite, infinite;
-    }
-
-    @keyframes snow-fall {
-      0% {
-        transform: translateY(-5vh);
-      }
-
-      100% {
-        transform: translateY(105vh);
-      }
-    }
-
-    @keyframes snow-sway {
-
-      0%,
-      100% {
-        margin-left: 0;
-      }
-
-      50% {
-        margin-left: 24px;
-      }
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      .snow-layer {
-        display: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sao Menghak — PNC Student Portfolio</title>
+<meta name="description" content="Sao Menghak — PNC Student & Future Web Developer. Portfolio, skills, projects and goals.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D1117;
+    --navy:#132437;
+    --navy-2:#1B3350;
+    --paper:#FAF6EC;
+    --paper-2:#F1EAD9;
+    --line:rgba(255,255,255,0.14);
+    --line-soft:rgba(255,255,255,0.07);
+    --paper-line:rgba(20,30,25,0.14);
+    --gold:#D4A24C;
+    --gold-light:#F0C878;
+    --teal:#3FB6A8;
+    --slate:#6E86A8;
+    --text:#20241F;
+    --text-dark:#EFEAE0;
+    --muted:#6B6559;
+    --muted-dark:#9AA6B4;
+    --radius-lg:18px;
+    --radius-md:12px;
+    --radius-sm:8px;
+    --shadow-sm:0 2px 10px rgba(13,17,23,0.08);
+    --shadow-md:0 14px 34px rgba(13,17,23,0.14);
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;color:var(--ink);letter-spacing:-0.01em;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  section{position:relative;padding:110px 8vw;}
+  .container{max-width:1200px;margin:0 auto;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  @media(prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- Blueprint grid backgrounds ---------- */
+  .grid-dark{
+    background-color:var(--ink);
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:44px 44px;
+  }
+  .grid-paper{
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  .crop-mark{position:absolute;width:22px;height:22px;pointer-events:none;opacity:.55;z-index:2;}
+  .crop-mark::before,.crop-mark::after{content:"";position:absolute;background:var(--gold);}
+  .crop-mark::before{top:50%;left:0;width:100%;height:1.5px;transform:translateY(-50%);}
+  .crop-mark::after{left:50%;top:0;height:100%;width:1.5px;transform:translateX(-50%);}
+  .cm-tl{top:22px;left:22px;} .cm-tr{top:22px;right:22px;} .cm-bl{bottom:22px;left:22px;} .cm-br{bottom:22px;right:22px;}
+
+  /* ---------- Utility ---------- */
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.72rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);}
+  .eyebrow .leaf{flex:1;height:1px;background:linear-gradient(90deg,var(--paper-line),transparent);}
+  .goals .eyebrow .leaf,.hero .eyebrow .leaf{background:linear-gradient(90deg,var(--line),transparent);}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.7rem,3.3vw,2.35rem);margin-bottom:12px;}
+  .section-head p{color:var(--muted);font-size:1.02rem;}
+  .goals .section-head p{color:var(--muted-dark);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:13px 26px;border-radius:2px;font-weight:600;font-size:.88rem;
+    font-family:'IBM Plex Mono',monospace;letter-spacing:.03em;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease), background .3s, border-color .3s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--gold);color:#211705;box-shadow:0 8px 20px rgba(212,162,76,0.28);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(212,162,76,0.4);background:var(--gold-light);}
+  .btn-outline{background:transparent;color:var(--text-dark);border:1.5px solid var(--line);}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
+  .btn-outline.on-paper{color:var(--text);border-color:var(--paper-line);}
+  .btn-outline.on-paper:hover{border-color:var(--gold);color:#8A651F;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .stagger > * {transition-delay:calc(var(--i,0) * 90ms);}
+
+  /* ---------- Navbar ---------- */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    background:rgba(13,17,23,0.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:all .35s var(--ease);
+  }
+  header.scrolled{
+    box-shadow:0 6px 24px rgba(0,0,0,0.28);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1280px;margin:0 auto;padding:20px 6vw;
+    transition:padding .35s var(--ease);
+  }
+  header.scrolled nav{padding:13px 6vw;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:42px;height:42px;border:1.5px solid var(--gold);border-radius:4px;
+    display:flex;align-items:center;justify-content:center;position:relative;
+    color:var(--gold);font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1rem;
+    flex-shrink:0;
+  }
+  .brand-mark::before,.brand-mark::after{content:"";position:absolute;width:5px;height:5px;border:1px solid var(--gold);}
+  .brand-mark::before{top:-3px;left:-3px;} .brand-mark::after{bottom:-3px;right:-3px;}
+  .brand-text{line-height:1.2;}
+  .brand-text strong{display:block;font-family:'Sora',sans-serif;font-weight:700;font-size:1rem;color:#fff;}
+  .brand-text span{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted-dark);letter-spacing:.06em;}
+
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.04em;
+    color:var(--muted-dark);position:relative;padding:4px 0;text-transform:uppercase;
+    transition:color .25s;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;
+    background:var(--gold);transition:width .3s var(--ease);
+  }
+  .nav-links a:hover{color:#fff;}
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;width:28px;z-index:1100;}
+  .hamburger span{display:block;height:2px;width:100%;background:var(--gold);border-radius:1px;transition:all .3s var(--ease);}
+  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    position:fixed;top:0;right:-100%;width:78%;max-width:340px;height:100vh;
+    background:var(--navy);z-index:1050;box-shadow:-10px 0 40px rgba(0,0,0,0.35);
+    padding:100px 32px 32px;transition:right .4s var(--ease);
+    display:flex;flex-direction:column;gap:24px;border-left:1px solid var(--line);
+  }
+  .mobile-menu.open{right:0;}
+  .mobile-menu a{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1rem;color:#fff;text-transform:uppercase;letter-spacing:.04em;}
+  .overlay{position:fixed;inset:0;background:rgba(5,8,12,0.6);z-index:1040;opacity:0;pointer-events:none;transition:opacity .35s;}
+  .overlay.open{opacity:1;pointer-events:auto;}
+
+  /* ---------- Theme toggle ---------- */
+  .theme-toggle{
+    width:40px;height:40px;border:1.5px solid var(--line);border-radius:4px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    color:var(--gold);transition:border-color .3s, transform .3s, color .3s;
+    position:relative;
+  }
+  .theme-toggle:hover{border-color:var(--gold);transform:translateY(-2px);}
+  .theme-toggle svg{width:19px;height:19px;position:absolute;transition:opacity .3s var(--ease), transform .4s var(--ease);}
+  .theme-toggle .icon-sun{opacity:0;transform:scale(.4) rotate(-60deg);}
+  .theme-toggle .icon-moon{opacity:1;transform:scale(1) rotate(0);}
+  html.light-theme .theme-toggle .icon-sun{opacity:1;transform:scale(1) rotate(0);}
+  html.light-theme .theme-toggle .icon-moon{opacity:0;transform:scale(.4) rotate(60deg);}
+  .mobile-menu .theme-toggle{border-color:var(--line);align-self:flex-start;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:172px 8vw 120px;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+    position:relative;overflow:hidden;color:var(--text-dark);
+  }
+  .hero-status{
+    display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.04);border:1px solid var(--line);
+    padding:8px 16px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.04em;font-weight:600;color:var(--muted-dark);
+    margin-bottom:26px;text-transform:uppercase;
+  }
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(63,182,168,0.2);animation:pulse-dot 2s infinite;}
+  @keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+  .hero h1{font-size:clamp(2.1rem,4.2vw,3.2rem);line-height:1.14;margin-bottom:16px;color:#fff;}
+  .hero h1 .accent-text{color:var(--gold);}
+
+  /* ---------- Hero heading entrance animation ---------- */
+  .hero h1.hero-heading{perspective:600px;}
+  .hero h1.hero-heading .word{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(38px) rotateX(-55deg);
+    transform-origin:50% 100%;
+    animation:word-in .85s var(--ease) forwards;
+    animation-delay:calc(var(--w) * .1s + .15s);
+    will-change:transform,opacity;
+  }
+  @keyframes word-in{
+    to{opacity:1;transform:translateY(0) rotateX(0);}
+  }
+  .hero h1.hero-heading .word.accent-text{
+    color:var(--gold);
+    background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 22%,var(--gold) 44%,var(--gold) 100%);
+    background-size:220% auto;
+    background-position:0% center;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:word-in .85s var(--ease) forwards, shimmer 3.2s linear infinite;
+    animation-delay:calc(var(--w) * .1s + .15s), 1.4s;
+  }
+  @keyframes shimmer{
+    0%{background-position:0% center;}
+    100%{background-position:220% center;}
+  }
+  .hero .role{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1rem;color:var(--muted-dark);margin-bottom:24px;letter-spacing:.02em;}
+  .hero .role strong{color:var(--gold);font-weight:600;}
+  .hero p.lead{color:var(--muted-dark);font-size:1.01rem;max-width:500px;margin-bottom:36px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-text{position:relative;z-index:3;}
+  .hero-visual{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;min-height:460px;}
+
+  /* Title-block card — the signature element */
+  .title-block{
+    position:relative;width:330px;background:var(--navy);border:1px solid var(--line);
+    z-index:5;animation:float-main 6.5s ease-in-out infinite;
+  }
+  @keyframes float-main{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+  .tb-photo{position:relative;overflow:hidden;aspect-ratio:1/1;border-bottom:1px solid var(--line);}
+  .tb-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+  .photo-frame{position:relative;overflow:hidden;}
+  .photo-frame::after{
+    content:"";position:absolute;inset:0;background:var(--ink);
+    transform-origin:right;transform:scaleX(1);
+    transition:transform 1.1s var(--ease);z-index:3;
+  }
+  .photo-frame.revealed::after{transform:scaleX(0);}
+  .photo-frame::before{
+    content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(13,17,23,0) 55%,rgba(13,17,23,0.4) 100%);
+  }
+  .tb-rows{padding:2px 0;}
+  .tb-row{display:grid;grid-template-columns:34% 66%;border-top:1px solid var(--line);}
+  .tb-row .k{
+    font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted-dark);padding:10px 12px;border-right:1px solid var(--line);
+  }
+  .tb-row .v{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#fff;padding:10px 12px;font-weight:500;
+  }
+  .tb-row .v.gold{color:var(--gold);}
+
+  .float-card{
+    position:absolute;background:var(--navy);padding:11px 15px;
+    display:flex;align-items:center;gap:9px;border:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.74rem;color:var(--muted-dark);
+    z-index:6;
+  }
+  .fc-icon{font-size:1rem;}
+  .fc-1{top:2%;right:-4%;animation:float-a 5s ease-in-out infinite;}
+  .fc-2{bottom:16%;left:-10%;animation:float-b 5.5s ease-in-out infinite;}
+  .fc-3{bottom:-4%;right:8%;animation:float-c 6.5s ease-in-out infinite;}
+  @keyframes float-a{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(-1deg);}}
+  @keyframes float-b{0%,100%{transform:translateY(0);}50%{transform:translateY(12px);}}
+  @keyframes float-c{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-10px) rotate(1deg);}}
+
+  /* ---------- Quick info ---------- */
+  .quick-info{padding:0 8vw 100px;margin-top:-46px;position:relative;z-index:8;}
+  .info-grid{
+    max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--paper-line);border:1px solid var(--paper-line);
+  }
+  .info-card{
+    background:var(--paper);padding:26px 22px;
+    transition:background .3s var(--ease);
+  }
+  .info-card:hover{background:var(--paper-2);}
+  .info-card .label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .info-card .value{font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink);}
+
+  /* ---------- About ---------- */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start;}
+  .about-photo{
+    position:relative;overflow:hidden;border:1px solid var(--paper-line);
+    aspect-ratio:3/4;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;}
+  .about p{color:var(--muted);margin-bottom:18px;font-size:1.02rem;}
+  .about-card{
+    background:transparent;border:1px solid var(--paper-line);padding:0;
+  }
+  .about-card h4{font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:16px 22px;border-bottom:1px solid var(--paper-line);}
+  .about-row{display:grid;grid-template-columns:38% 62%;border-top:1px solid var(--paper-line);}
+  .about-row:first-of-type{border-top:none;}
+  .about-row .k{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);font-weight:500;padding:13px 22px;border-right:1px solid var(--paper-line);text-transform:uppercase;letter-spacing:.03em;}
+  .about-row .v{font-weight:600;color:var(--ink);padding:13px 22px;font-size:.92rem;}
+
+  /* ---------- Education ---------- */
+  .education-head-card{
+    display:flex;gap:22px;align-items:center;background:transparent;border:1px solid var(--paper-line);
+    padding:26px 30px;margin-bottom:60px;
+  }
+  .edu-badge{
+    width:58px;height:58px;border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;color:var(--gold);position:relative;
+  }
+  .edu-badge::before,.edu-badge::after{content:"";position:absolute;width:6px;height:6px;border:1px solid var(--gold);}
+  .edu-badge::before{top:-4px;left:-4px;} .edu-badge::after{bottom:-4px;right:-4px;}
+  .education-head-card h3{font-size:1.15rem;margin-bottom:4px;}
+  .education-head-card .tag{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:inline-block;}
+  .education-head-card p{color:var(--muted);font-size:.92rem;}
+
+  .timeline{position:relative;padding-left:40px;}
+  .timeline::before{
+    content:"";position:absolute;left:9px;top:6px;bottom:6px;width:1px;
+    background:repeating-linear-gradient(var(--gold), var(--gold) 4px, transparent 4px, transparent 9px);
+  }
+  .t-item{position:relative;padding-bottom:42px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-dot{
+    position:absolute;left:-40px;top:2px;width:19px;height:19px;
+    background:var(--paper);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;
+  }
+  .t-dot::before{content:"";width:5px;height:5px;background:var(--gold);}
+  .t-item.in-view .t-dot{animation:dot-pop .5s var(--ease);}
+  @keyframes dot-pop{0%{transform:scale(0);}70%{transform:scale(1.25);}100%{transform:scale(1);}}
+  .t-item .t-num{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.06em;margin-bottom:6px;display:block;}
+  .t-item h4{font-size:1.02rem;margin-bottom:6px;}
+  .t-item p{color:var(--muted);font-size:.92rem;max-width:520px;}
+
+  /* ---------- Skills ---------- */
+  .skills{background:var(--paper-2);}
+  .skills-cols{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;}
+  .skill-item{margin-bottom:26px;}
+  .skill-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;}
+  .skill-top .sname{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.86rem;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;}
+  .skill-top .spct{font-weight:700;color:var(--gold);font-size:.82rem;}
+  .bar-track{width:100%;height:7px;background:var(--paper-line);position:relative;overflow:hidden;}
+  .bar-track::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent,transparent 9px,rgba(0,0,0,0.06) 9px,rgba(0,0,0,0.06) 10px);z-index:2;}
+  .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width 1.2s var(--ease);}
+
+  .soft-title{font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:20px;}
+  .soft-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--paper-line);border:1px solid var(--paper-line);}
+  .soft-card{
+    background:var(--paper-2);padding:20px 16px;text-align:center;transition:background .3s var(--ease);
+  }
+  .soft-card:hover{background:var(--paper);}
+  .soft-card .si{margin-bottom:10px;color:var(--gold);}
+  .soft-card .si svg{width:30px;height:30px;display:block;}
+  .soft-card:hover .si{color:#8A651F;}
+  .soft-card .sl{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.76rem;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;}
+
+  /* ---------- Projects ---------- */
+  .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper-line);border:1px solid var(--paper-line);}
+  .project-card{
+    background:var(--paper);overflow:hidden;
+    transition:transform .3s var(--ease);
+  }
+  .project-card:hover{transform:translateY(-6px);}
+  .project-thumb{
+    height:180px;position:relative;overflow:hidden;
+    display:flex;align-items:flex-end;justify-content:flex-start;padding:16px 18px;
+    background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 12px);
+  }
+  .thumb-1{background-color:var(--navy-2);}
+  .thumb-2{background-color:#4A6B5C;}
+  .thumb-3{background-color:#5A4A6B;}
+  .project-thumb .p-num{
+    position:relative;z-index:2;font-family:'IBM Plex Mono',monospace;font-weight:600;color:rgba(255,255,255,0.85);font-size:.78rem;letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .project-body{padding:24px 24px 26px;}
+  .project-body h3{font-size:1.05rem;margin-bottom:10px;}
+  .project-body p{color:var(--muted);font-size:.9rem;margin-bottom:18px;}
+  .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tech-tag{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:600;color:var(--muted);border:1px solid var(--paper-line);padding:5px 9px;}
+  .project-link{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);font-size:.8rem;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+  .view-all-wrap{text-align:center;margin-top:48px;}
+
+  /* ---------- Learning Journey ---------- */
+  .journey-track{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;position:relative;}
+  .journey-track::before{content:"";position:absolute;top:17px;left:0;right:0;height:1px;background:repeating-linear-gradient(90deg,var(--gold),var(--gold) 5px,transparent 5px,transparent 11px);z-index:0;}
+  .j-step{position:relative;}
+  .j-num{
+    width:36px;height:36px;background:var(--paper);border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--gold);margin-bottom:20px;font-size:1rem;
+  }
+  .j-step h4{font-size:1.02rem;margin-bottom:8px;}
+  .j-step p{color:var(--muted);font-size:.88rem;}
+
+  /* ---------- Goals ---------- */
+  .goals{background:var(--ink);color:var(--text-dark);overflow:hidden;position:relative;}
+  .goals .section-head h2{color:#fff;}
+  .goals .section-head p{color:var(--muted-dark);}
+  .goals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-bottom:70px;background:var(--line);border:1px solid var(--line);}
+  .goal-card{
+    background:var(--ink);padding:26px 22px;transition:background .3s var(--ease);
+  }
+  .goal-card:hover{background:var(--navy);}
+  .goal-card .gtag{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+  .goal-card h4{color:#fff;font-size:1rem;}
+  .quote-block{
+    text-align:center;max-width:700px;margin:0 auto;position:relative;padding:44px 20px 0;
+  }
+  .quote-block p{
+    font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.4rem,3.2vw,2.15rem);
+    color:#fff;
+  }
+  .quote-block .quote-mark{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:16px;}
+  .compass-wrap{display:flex;justify-content:center;margin-top:38px;}
+  .compass-wrap svg{width:120px;animation:rocket-float 3.5s ease-in-out infinite;}
+  @keyframes rocket-float{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-14px) rotate(2deg);}}
+
+  /* ---------- Achievements ---------- */
+  .ach-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+  .ach-card{
+    border:1px solid var(--paper-line);
+    padding:28px 16px;text-align:center;
+    transition:transform .3s var(--ease), border-color .3s;
+    position:relative;
+  }
+  .ach-card::before{content:"";position:absolute;inset:6px;border:1px dashed var(--paper-line);pointer-events:none;transition:border-color .3s;}
+  .ach-card:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .ach-card:hover::before{border-color:var(--gold-light);}
+  .ach-card .ai{font-size:1.7rem;margin-bottom:12px;}
+  .ach-card .al{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.74rem;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--paper-2);}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;}
+  .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:30px;background:var(--paper-line);border:1px solid var(--paper-line);}
+  .c-card{
+    background:var(--paper-2);padding:20px;
+    transition:background .3s var(--ease);
+  }
+  .c-card:hover{background:var(--paper);}
+  .c-card .ci{font-size:1.2rem;margin-bottom:10px;}
+  .c-card .cl{font-family:'IBM Plex Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+  .c-card .cv{font-weight:600;font-size:.88rem;color:var(--ink);word-break:break-word;}
+
+  .form-card{background:var(--paper);border:1px solid var(--paper-line);padding:36px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .field{display:flex;flex-direction:column;gap:8px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .field input, .field textarea{
+    padding:12px 4px;border:none;border-bottom:1.5px solid var(--paper-line);background:transparent;
+    font-family:'Inter',sans-serif;font-size:.92rem;color:var(--text);transition:border-color .25s;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--gold);}
+  .field textarea{resize:vertical;min-height:110px;}
+  .field .err{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#B23B3B;min-height:14px;}
+  .field.invalid input, .field.invalid textarea{border-color:#B23B3B;}
+  .form-submit{width:100%;justify-content:center;margin-top:8px;}
+  .form-success{
+    display:none;align-items:center;gap:10px;background:rgba(63,182,168,0.1);color:#2A7A6E;border:1px solid rgba(63,182,168,0.35);
+    padding:14px 18px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;margin-top:16px;
+  }
+  .form-success.show{display:flex;}
+  .form-success.show-error{background:rgba(178,59,59,0.1);color:#B23B3B;border-color:rgba(178,59,59,0.35);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:var(--muted-dark);padding:70px 8vw 30px;}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line);}
+  .footer-brand{display:flex;gap:14px;margin-bottom:16px;}
+  .footer-brand strong{color:#fff;font-family:'Sora',sans-serif;font-size:1.02rem;}
+  .footer-brand span{font-family:'IBM Plex Mono',monospace;color:var(--muted-dark);font-size:.72rem;}
+  .footer-desc{color:var(--muted-dark);font-size:.86rem;max-width:320px;}
+  .footer-col h5{color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;}
+  .footer-col a{display:block;color:var(--muted-dark);font-size:.86rem;margin-bottom:12px;transition:color .25s;}
+  .footer-col a:hover{color:var(--gold);}
+  .social-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .social-btn{
+    width:38px;height:38px;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--muted-dark);
+    transition:border-color .3s, color .3s, transform .3s;
+  }
+  .social-btn:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-4px);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--muted-dark);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1024px){
+    .info-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .skills-cols, .contact-grid{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:repeat(2,1fr);}
+    .journey-track{grid-template-columns:repeat(2,1fr);row-gap:44px;}
+    .journey-track::before{display:none;}
+    .goals-grid{grid-template-columns:repeat(2,1fr);}
+    .ach-grid{grid-template-columns:repeat(3,1fr);}
+    .hero{grid-template-columns:1fr;padding-top:150px;}
+    .hero-visual{margin-top:20px;order:-1;min-height:400px;}
+    .footer-top{grid-template-columns:1fr;gap:36px;}
+  }
+
+  @media(max-width:768px){
+    section{padding:76px 6vw;}
+    .nav-links{display:none;}
+    .nav-right .btn-primary.desktop-cv{display:none;}
+    .hamburger{display:flex;}
+    .hero{padding:130px 6vw 70px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .hero-actions .btn{width:100%;}
+    .info-grid{grid-template-columns:1fr 1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .journey-track{grid-template-columns:1fr;}
+    .goals-grid{grid-template-columns:1fr 1fr;}
+    .ach-grid{grid-template-columns:repeat(2,1fr);}
+    .form-row{grid-template-columns:1fr;}
+    .contact-cards{grid-template-columns:1fr 1fr;}
+    .quick-info{margin-top:-24px;}
+    .title-block{width:100%;max-width:330px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;}
+    .soft-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  @media(max-width:480px){
+    .info-grid{grid-template-columns:1fr;}
+    .goals-grid{grid-template-columns:1fr;}
+    .ach-grid{grid-template-columns:1fr 1fr;}
+    .contact-cards{grid-template-columns:1fr;}
+    .fc-1, .fc-2, .fc-3{position:static;margin-top:10px;display:inline-flex;}
+  }
+
+  /* ---------- Hero ambient lighting ---------- */
+  .hero-glow{
+    position:absolute;border-radius:50%;
+    pointer-events:none;z-index:0;
+    filter:blur(90px);
+    animation:glow-pulse 8s ease-in-out infinite;
+  }
+  .glow-gold{
+    width:520px;height:520px;
+    top:-160px;left:-120px;
+    background:radial-gradient(circle, rgba(212,162,76,0.35) 0%, rgba(212,162,76,0) 70%);
+    animation-delay:0s;
+  }
+  .glow-teal{
+    width:480px;height:480px;
+    bottom:-180px;right:-100px;
+    background:radial-gradient(circle, rgba(63,182,168,0.28) 0%, rgba(63,182,168,0) 70%);
+    animation-delay:2.5s;
+  }
+  @keyframes glow-pulse{
+    0%,100%{opacity:.7;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.12);}
+  }
+  @media(prefers-reduced-motion: reduce){
+    .hero-glow{animation:none;}
+  }
+
+  /* ---------- Lightning ---------- */
+  .lightning-layer{
+    position:absolute;inset:0;
+    pointer-events:none;z-index:1;overflow:hidden;
+  }
+  .flash-overlay{
+    position:absolute;inset:0;background:#EAF2FF;
+    opacity:0;mix-blend-mode:screen;
+  }
+  .flash-overlay.strike{animation:flash-flicker 0.7s ease-out;}
+  @keyframes flash-flicker{
+    0%{opacity:0;}
+    4%{opacity:.5;}
+    9%{opacity:.04;}
+    14%{opacity:.38;}
+    22%{opacity:0;}
+    32%{opacity:.22;}
+    42%{opacity:0;}
+    100%{opacity:0;}
+  }
+  .bolt{
+    position:absolute;top:0;height:100%;width:auto;
+    opacity:0;
+  }
+  .bolt-a{left:12%;}
+  .bolt-b{left:68%;}
+  .bolt.strike{animation:bolt-flicker 0.7s ease-out;}
+  @keyframes bolt-flicker{
+    0%{opacity:0;}
+    4%{opacity:1;}
+    9%{opacity:.15;}
+    14%{opacity:1;}
+    22%{opacity:.08;}
+    32%{opacity:.85;}
+    42%{opacity:0;}
+    100%{opacity:0;}
+  }
+  .bolt-main{
+    fill:none;stroke:#fff;stroke-width:2.4;
+    stroke-linejoin:round;stroke-linecap:round;
+    filter:drop-shadow(0 0 6px rgba(255,255,255,0.95)) drop-shadow(0 0 22px rgba(160,205,255,0.75)) drop-shadow(0 0 46px rgba(120,180,255,0.4));
+  }
+  .bolt-branch{
+    fill:none;stroke:#dce9ff;stroke-width:1.1;opacity:.75;
+    stroke-linejoin:round;stroke-linecap:round;
+    filter:drop-shadow(0 0 4px rgba(200,225,255,0.7));
+  }
+  @media(prefers-reduced-motion: reduce){
+    .lightning-layer{display:none;}
+  }
+
+  /* ---------- Snow ---------- */
+  .snow-layer{
+    position:absolute;inset:0;width:100%;height:100%;
+    pointer-events:none;z-index:1;overflow:hidden;
+  }
+  .snowflake{
+    position:absolute;top:-5vh;
+    border-radius:50%;
+    background:radial-gradient(circle at 32% 30%, #ffffff 0%, rgba(255,255,255,.95) 35%, rgba(255,255,255,.35) 75%, rgba(255,255,255,0) 100%);
+    box-shadow:0 0 6px 1px rgba(255,255,255,.55), 0 0 2px rgba(255,255,255,.9);
+    will-change:transform;
+    animation-name:snow-fall, snow-sway;
+    animation-timing-function:linear, ease-in-out;
+    animation-iteration-count:infinite, infinite;
+  }
+  @keyframes snow-fall{
+    0%{transform:translateY(-5vh);}
+    100%{transform:translateY(105vh);}
+  }
+  @keyframes snow-sway{
+    0%,100%{margin-left:0;}
+    50%{margin-left:24px;}
+  }
+  @media(prefers-reduced-motion: reduce){
+    .snow-layer{display:none;}
+  }
+
+  /* ==========================================================
+     LIGHT THEME OVERRIDE
+     Default document theme is "dark" (paper/ink blueprint mix
+     as originally designed). Adding html.light-theme flips the
+     "paper" toned sections into a soft, true light theme and
+     lightens the dark blueprint sections so the whole page
+     reads as one consistent light UI.
+     ========================================================== */
+  html.light-theme{
+    --paper:#FFFFFF;
+    --paper-2:#F6F3EA;
+    --paper-line:rgba(20,30,25,0.12);
+    --text:#20241F;
+    --muted:#6B6559;
+  }
+  html.light-theme .grid-dark{
+    background-color:#EFE9D8;
+    background-image:
+      linear-gradient(rgba(20,30,25,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,30,25,0.06) 1px, transparent 1px);
+  }
+  html.light-theme .hero,
+  html.light-theme .goals{
+    color:var(--text);
+  }
+  html.light-theme .hero-status{background:rgba(20,30,25,0.04);border-color:var(--paper-line);color:var(--muted);}
+  html.light-theme .hero h1,
+  html.light-theme .hero h1.hero-heading .word:not(.accent-text){color:var(--ink);}
+  html.light-theme .hero .role,
+  html.light-theme .hero p.lead{color:var(--muted);}
+  html.light-theme .btn-outline{color:var(--text);border-color:var(--paper-line);}
+  html.light-theme .btn-outline:hover{color:#8A651F;border-color:var(--gold);}
+  html.light-theme .title-block,
+  html.light-theme .float-card{background:#fff;border-color:var(--paper-line);}
+  html.light-theme .tb-row{border-top-color:var(--paper-line);}
+  html.light-theme .tb-row .k{color:var(--muted);border-right-color:var(--paper-line);}
+  html.light-theme .tb-row .v{color:var(--ink);}
+  html.light-theme .goals .section-head h2{color:var(--ink);}
+  html.light-theme .goals .section-head p{color:var(--muted);}
+  html.light-theme .goals-grid{background:var(--paper-line);border-color:var(--paper-line);}
+  html.light-theme .goal-card{background:#fff;}
+  html.light-theme .goal-card:hover{background:var(--paper-2);}
+  html.light-theme .goal-card h4{color:var(--ink);}
+  html.light-theme .quote-block p{color:var(--ink);}
+  html.light-theme header{background:rgba(255,255,255,0.86);border-bottom-color:var(--paper-line);}
+  html.light-theme header.scrolled{border-bottom-color:var(--paper-line);box-shadow:0 6px 24px rgba(20,30,25,0.08);}
+  html.light-theme .brand-text strong{color:var(--ink);}
+  html.light-theme .brand-text span,
+  html.light-theme .nav-links a{color:var(--muted);}
+  html.light-theme .nav-links a:hover{color:var(--ink);}
+  html.light-theme .theme-toggle{border-color:var(--paper-line);}
+  html.light-theme footer{background:var(--paper-2);color:var(--muted);}
+  html.light-theme .footer-top{border-bottom-color:var(--paper-line);}
+  html.light-theme .footer-brand strong{color:var(--ink);}
+  html.light-theme .footer-desc,
+  html.light-theme .footer-col a{color:var(--muted);}
+  html.light-theme .footer-col a:hover{color:#8A651F;}
+  html.light-theme .footer-col h5{color:var(--ink);}
+  html.light-theme .social-btn{border-color:var(--paper-line);color:var(--muted);}
+  html.light-theme .social-btn:hover{border-color:var(--gold);color:#8A651F;}
+</style>
 </head>
-
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header id="siteHeader">
-    <nav>
-      <a href="#home" class="brand">
-        <div class="brand-mark">SM</div>
-        <div class="brand-text">
-          <strong>Sao Menghak</strong>
-          <span>PNC STUDENT</span>
-        </div>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-right">
-        <a class="btn btn-primary desktop-cv" id="cvBtnDesktop" href="assets/Sao_Menghak_CV.pdf"
-          download="Sao_Menghak_CV.pdf">Download CV</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+<!-- ================= NAVBAR ================= -->
+<header id="siteHeader">
+  <nav>
+    <a href="#home" class="brand">
+      <div class="brand-mark">SM</div>
+      <div class="brand-text">
+        <strong>Sao Menghak</strong>
+        <span>PNC STUDENT</span>
       </div>
-    </nav>
-  </header>
+    </a>
 
-  <div class="overlay" id="overlay"></div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#goals">Goals</a>
-    <a href="#contact">Contact</a>
-    <a class="btn btn-primary" id="cvBtnMobile" style="margin-top:10px;" href="assets/Sao_Menghak_CV.pdf"
-      download="Sao_Menghak_CV.pdf">Download CV</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggleDesktop" aria-label="Toggle light and dark theme" type="button">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-primary desktop-cv" id="cvBtnDesktop" href="assets/Sao_Menghak_CV.pdf" download="Sao_Menghak_CV.pdf">Download CV</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#goals">Goals</a>
+  <a href="#contact">Contact</a>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle light and dark theme" type="button">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+  <a class="btn btn-primary" id="cvBtnMobile" style="margin-top:10px;" href="assets/Sao_Menghak_CV.pdf" download="Sao_Menghak_CV.pdf">Download CV</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero grid-dark" id="home">
+  <div class="hero-glow glow-gold"></div>
+  <div class="hero-glow glow-teal"></div>
+  <div class="lightning-layer" id="lightningLayer" aria-hidden="true">
+    <div class="flash-overlay" id="flashOverlay"></div>
+    <svg class="bolt bolt-a" id="boltA" viewBox="0 0 120 500" preserveAspectRatio="none">
+      <path class="bolt-branch" d="M58 40 L20 95 L48 100" />
+      <path class="bolt-branch" d="M66 180 L108 220 L82 226" />
+      <path class="bolt-branch" d="M52 320 L14 360 L40 366" />
+      <path class="bolt-main" d="M62 0 L48 70 L64 76 L36 168 L58 174 L30 268 L52 274 L26 380 L46 386 L34 500" />
+    </svg>
+    <svg class="bolt bolt-b" id="boltB" viewBox="0 0 120 500" preserveAspectRatio="none">
+      <path class="bolt-branch" d="M50 60 L92 100 L68 106" />
+      <path class="bolt-branch" d="M40 220 L4 258 L28 264" />
+      <path class="bolt-main" d="M56 0 L70 90 L52 96 L78 190 L58 196 L84 300 L60 306 L72 420 L54 500" />
+    </svg>
+  </div>
+  <div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
+  <div class="crop-mark cm-tl"></div>
+  <div class="crop-mark cm-tr"></div>
+  <div class="crop-mark cm-bl"></div>
+  <div class="crop-mark cm-br"></div>
+
+  <div class="hero-text reveal in-view">
+    <div class="hero-status"><span class="status-dot"></span> Currently Learning &amp; Building</div>
+    <h1 class="hero-heading"><span class="word" style="--w:0">Hello,</span> <span class="word" style="--w:1">I'm</span> <span class="word accent-text" style="--w:2">Sao</span> <span class="word accent-text" style="--w:3">Menghak</span></h1>
+    <p class="role"><strong>PNC Student</strong> &amp; Future Web Developer</p>
+    <p class="lead">I am a student at PNC who is passionate about technology, web design, programming, and continuous learning. I enjoy creating modern and useful digital experiences while developing my technical and soft skills.</p>
+    <div class="hero-actions">
+      <a href="#about" class="btn btn-primary">View My Profile</a>
+      <a href="#projects" class="btn btn-outline">Explore My Projects</a>
+    </div>
   </div>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero grid-dark" id="home">
-    <div class="hero-glow glow-gold"></div>
-    <div class="hero-glow glow-teal"></div>
-    <div class="lightning-layer" id="lightningLayer" aria-hidden="true">
-      <div class="flash-overlay" id="flashOverlay"></div>
-      <svg class="bolt bolt-a" id="boltA" viewBox="0 0 120 500" preserveAspectRatio="none">
-        <path class="bolt-branch" d="M58 40 L20 95 L48 100" />
-        <path class="bolt-branch" d="M66 180 L108 220 L82 226" />
-        <path class="bolt-branch" d="M52 320 L14 360 L40 366" />
-        <path class="bolt-main" d="M62 0 L48 70 L64 76 L36 168 L58 174 L30 268 L52 274 L26 380 L46 386 L34 500" />
-      </svg>
-      <svg class="bolt bolt-b" id="boltB" viewBox="0 0 120 500" preserveAspectRatio="none">
-        <path class="bolt-branch" d="M50 60 L92 100 L68 106" />
-        <path class="bolt-branch" d="M40 220 L4 258 L28 264" />
-        <path class="bolt-main" d="M56 0 L70 90 L52 96 L78 190 L58 196 L84 300 L60 306 L72 420 L54 500" />
-      </svg>
-    </div>
-    <div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
-    <div class="crop-mark cm-tl"></div>
-    <div class="crop-mark cm-tr"></div>
-    <div class="crop-mark cm-bl"></div>
-    <div class="crop-mark cm-br"></div>
-
-    <div class="hero-text reveal in-view">
-      <div class="hero-status"><span class="status-dot"></span> Currently Learning &amp; Building</div>
-      <h1 class="hero-heading"><span class="word" style="--w:0">Hello,</span> <span class="word"
-          style="--w:1">I'm</span> <span class="word accent-text" style="--w:2">Sao</span> <span
-          class="word accent-text" style="--w:3">Menghak</span></h1>
-      <p class="role"><strong>PNC Student</strong> &amp; Future Web Developer</p>
-      <p class="lead">I am a student at PNC who is passionate about technology, web design, programming, and continuous
-        learning. I enjoy creating modern and useful digital experiences while developing my technical and soft skills.
-      </p>
-      <div class="hero-actions">
-        <a href="#about" class="btn btn-primary">View My Profile</a>
-        <a href="#projects" class="btn btn-outline">Explore My Projects</a>
+  <div class="hero-visual reveal in-view">
+    <div class="title-block">
+      <div class="tb-photo photo-frame" id="heroPhotoFrame">
+        <img src="assets/profile.jpg" alt="Sao Menghak — PNC Student">
+      </div>
+      <div class="tb-rows">
+        <div class="tb-row"><div class="k">Name</div><div class="v">Sao Menghak</div></div>
+        <div class="tb-row"><div class="k">Role</div><div class="v gold">Future Web Developer</div></div>
+        <div class="tb-row"><div class="k">Based</div><div class="v">Cambodia</div></div>
+        <div class="tb-row"><div class="k">Status</div><div class="v">Learning · Building</div></div>
       </div>
     </div>
 
-    <div class="hero-visual reveal in-view">
-      <div class="title-block">
-        <div class="tb-photo photo-frame" id="heroPhotoFrame">
-          <img src="assets/profile.jpg" alt="Sao Menghak — PNC Student">
+    <div class="float-card fc-1"><span class="fc-icon">💻</span> Web Design</div>
+    <div class="float-card fc-2"><span class="fc-icon">🎓</span> PNC Student</div>
+    <div class="float-card fc-3"><span class="fc-icon">🚀</span> Future Developer</div>
+  </div>
+</section>
+
+<!-- ================= QUICK INFO ================= -->
+<section class="quick-info">
+  <div class="info-grid stagger">
+    <div class="info-card reveal" style="--i:0">
+      <div class="label">School</div>
+      <div class="value">PNC</div>
+    </div>
+    <div class="info-card reveal" style="--i:1">
+      <div class="label">Field</div>
+      <div class="value">Web Development</div>
+    </div>
+    <div class="info-card reveal" style="--i:2">
+      <div class="label">Location</div>
+      <div class="value">Cambodia</div>
+    </div>
+    <div class="info-card reveal" style="--i:3">
+      <div class="label">Goal</div>
+      <div class="value">Future Developer</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about grid-paper" id="about">
+  <div class="container about-grid">
+    <div class="about-photo photo-frame reveal" id="aboutPhotoFrame">
+      <img src="assets/profile2.jpg" alt="Sao Menghak — PNC Student">
+    </div>
+
+    <div>
+      <div class="eyebrow reveal">01 · About Me<span class="leaf"></span></div>
+      <h2 class="reveal" style="margin-bottom:10px;">Get to know me</h2>
+      <p class="reveal">My name is Sao Menghak, and I am currently studying at PNC. I am interested in technology and web development. My studies allow me to improve both my technical knowledge and my ability to work with others.</p>
+      <p class="reveal">I enjoy learning new technologies, solving problems, designing websites, and creating projects that can be useful to people.</p>
+      <a href="#contact" class="btn btn-outline on-paper reveal">More About Me</a>
+
+      <div class="about-card reveal" style="margin-top:32px;">
+        <h4>Profile Spec</h4>
+        <div class="about-row"><div class="k">School</div><div class="v">PNC</div></div>
+        <div class="about-row"><div class="k">Track</div><div class="v">Web Development</div></div>
+        <div class="about-row"><div class="k">Location</div><div class="v">Cambodia</div></div>
+        <div class="about-row"><div class="k">Focus</div><div class="v">Frontend &amp; Backend Basics</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="grid-paper" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">02 · Education<span class="leaf"></span></div>
+      <h2>PNC — Student</h2>
+      <p>My academic path at Passerelles Numériques Cambodia.</p>
+    </div>
+
+    <div class="education-head-card reveal">
+      <div class="edu-badge">🎓</div>
+      <div>
+        <h3>PNC</h3>
+        <span class="tag">Current Student</span>
+        <p>Developing knowledge and practical skills in technology, web development, communication, teamwork, and professional development.</p>
+      </div>
+    </div>
+
+    <div class="timeline stagger">
+      <div class="t-item reveal" style="--i:0"><div class="t-dot"></div><span class="t-num">T-01</span><h4>Technical Training</h4><p>Building a strong foundation in computing fundamentals and technical practice at PNC.</p></div>
+      <div class="t-item reveal" style="--i:1"><div class="t-dot"></div><span class="t-num">T-02</span><h4>Web Development</h4><p>Learning HTML, CSS, JavaScript and databases to build functional, modern websites.</p></div>
+      <div class="t-item reveal" style="--i:2"><div class="t-dot"></div><span class="t-num">T-03</span><h4>Communication Skills</h4><p>Improving how I present ideas, collaborate, and communicate clearly in English and Khmer.</p></div>
+      <div class="t-item reveal" style="--i:3"><div class="t-dot"></div><span class="t-num">T-04</span><h4>Teamwork</h4><p>Working alongside classmates on group projects to build stronger collaboration habits.</p></div>
+      <div class="t-item reveal" style="--i:4"><div class="t-dot"></div><span class="t-num">T-05</span><h4>Professional Development</h4><p>Preparing for the workplace through soft-skills training and real-world project work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">03 · Skills<span class="leaf"></span></div>
+      <h2>Skill Dashboard</h2>
+      <p>Technical and soft skills I have developed at PNC.</p>
+    </div>
+
+    <div class="skills-cols">
+      <div>
+        <div class="skill-item" data-pct="85">
+          <div class="skill-top"><span class="sname">HTML</span><span class="spct">85%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
         </div>
-        <div class="tb-rows">
-          <div class="tb-row">
-            <div class="k">Name</div>
-            <div class="v">Sao Menghak</div>
-          </div>
-          <div class="tb-row">
-            <div class="k">Role</div>
-            <div class="v gold">Future Web Developer</div>
-          </div>
-          <div class="tb-row">
-            <div class="k">Based</div>
-            <div class="v">Cambodia</div>
-          </div>
-          <div class="tb-row">
-            <div class="k">Status</div>
-            <div class="v">Learning · Building</div>
-          </div>
+        <div class="skill-item" data-pct="80">
+          <div class="skill-top"><span class="sname">CSS</span><span class="spct">80%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
         </div>
-      </div>
-
-      <div class="float-card fc-1"><span class="fc-icon">💻</span> Web Design</div>
-      <div class="float-card fc-2"><span class="fc-icon">🎓</span> PNC Student</div>
-      <div class="float-card fc-3"><span class="fc-icon">🚀</span> Future Developer</div>
-    </div>
-  </section>
-
-  <!-- ================= QUICK INFO ================= -->
-  <section class="quick-info">
-    <div class="info-grid stagger">
-      <div class="info-card reveal" style="--i:0">
-        <div class="label">School</div>
-        <div class="value">PNC</div>
-      </div>
-      <div class="info-card reveal" style="--i:1">
-        <div class="label">Field</div>
-        <div class="value">Web Development</div>
-      </div>
-      <div class="info-card reveal" style="--i:2">
-        <div class="label">Location</div>
-        <div class="value">Cambodia</div>
-      </div>
-      <div class="info-card reveal" style="--i:3">
-        <div class="label">Goal</div>
-        <div class="value">Future Developer</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="about grid-paper" id="about">
-    <div class="container about-grid">
-      <div class="about-photo photo-frame reveal" id="aboutPhotoFrame">
-        <img src="assets/profile2.jpg" alt="Sao Menghak — PNC Student">
+        <div class="skill-item" data-pct="70">
+          <div class="skill-top"><span class="sname">JavaScript</span><span class="spct">70%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-item" data-pct="65">
+          <div class="skill-top"><span class="sname">PHP</span><span class="spct">65%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-item" data-pct="70">
+          <div class="skill-top"><span class="sname">MySQL</span><span class="spct">70%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-item" data-pct="80">
+          <div class="skill-top"><span class="sname">Bootstrap</span><span class="spct">80%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-item" data-pct="65">
+          <div class="skill-top"><span class="sname">Python</span><span class="spct">65%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
       </div>
 
       <div>
-        <div class="eyebrow reveal">01 · About Me<span class="leaf"></span></div>
-        <h2 class="reveal" style="margin-bottom:10px;">Get to know me</h2>
-        <p class="reveal">My name is Sao Menghak, and I am currently studying at PNC. I am interested in technology and
-          web development. My studies allow me to improve both my technical knowledge and my ability to work with
-          others.</p>
-        <p class="reveal">I enjoy learning new technologies, solving problems, designing websites, and creating projects
-          that can be useful to people.</p>
-        <a href="#contact" class="btn btn-outline on-paper reveal">More About Me</a>
-
-        <div class="about-card reveal" style="margin-top:32px;">
-          <h4>Profile Spec</h4>
-          <div class="about-row">
-            <div class="k">School</div>
-            <div class="v">PNC</div>
+        <h4 class="soft-title reveal">Soft Skills</h4>
+        <div class="soft-grid stagger">
+          <div class="soft-card reveal" style="--i:0">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22.5 21v-2a4 4 0 0 0-3-3.87"/><path d="M16.5 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="sl">Teamwork</div>
           </div>
-          <div class="about-row">
-            <div class="k">Track</div>
-            <div class="v">Web Development</div>
+          <div class="soft-card reveal" style="--i:1">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <div class="sl">Communication</div>
           </div>
-          <div class="about-row">
-            <div class="k">Location</div>
-            <div class="v">Cambodia</div>
+          <div class="soft-card reveal" style="--i:2">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 1h6"/><path d="M12 1v3"/></svg></div>
+            <div class="sl">Time Management</div>
           </div>
-          <div class="about-row">
-            <div class="k">Focus</div>
-            <div class="v">Frontend &amp; Backend Basics</div>
+          <div class="soft-card reveal" style="--i:3">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a4.5 4.5 0 0 0-4 6.5A4 4 0 0 0 4 12a4 4 0 0 0 2 3.46V17a3 3 0 0 0 3 3h1v-4.5a2.5 2.5 0 1 1 4 0V20h1a3 3 0 0 0 3-3v-1.54A4 4 0 0 0 20 12a4 4 0 0 0-1.5-3.5A4.5 4.5 0 0 0 14.5 2 4.48 4.48 0 0 0 12 2.76 4.48 4.48 0 0 0 9.5 2z"/></svg></div>
+            <div class="sl">Problem Solving</div>
+          </div>
+          <div class="soft-card reveal" style="--i:4">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+            <div class="sl">Responsibility</div>
+          </div>
+          <div class="soft-card reveal" style="--i:5">
+            <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3H10a2 2 0 0 1 2 2 2 2 0 0 1 2-2h5.5A2.5 2.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 0 0-2 2 2 2 0 0 0-2-2H3.5A1.5 1.5 0 0 1 2 18.5v-13z"/><path d="M12 5v15"/></svg></div>
+            <div class="sl">Self-Learning</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section class="grid-paper" id="education">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">02 · Education<span class="leaf"></span></div>
-        <h2>PNC — Student</h2>
-        <p>My academic path at Passerelles Numériques Cambodia.</p>
+<!-- ================= PROJECTS ================= -->
+<section class="grid-paper" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">04 · My Projects<span class="leaf"></span></div>
+      <h2>Things I have learned and built</h2>
+      <p>A selection of projects from my learning journey at PNC.</p>
+    </div>
+
+    <div class="project-grid stagger">
+      <div class="project-card reveal" style="--i:0">
+        <div class="project-thumb thumb-1"><span class="p-num">Sheet 01 / 03</span></div>
+        <div class="project-body">
+          <h3>Student Information Website</h3>
+          <p>A modern responsive website designed to present student information and achievements.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span>
+          </div>
+          <a href="#" class="project-link">View Project <span>→</span></a>
+        </div>
       </div>
 
-      <div class="education-head-card reveal">
-        <div class="edu-badge">🎓</div>
+      <div class="project-card reveal" style="--i:1">
+        <div class="project-thumb thumb-2"><span class="p-num">Sheet 02 / 03</span></div>
+        <div class="project-body">
+          <h3>Animal Guessing Game</h3>
+          <p>An interactive guessing game where users identify animals using real animal images and multiple-choice answers.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
+          </div>
+          <a href="https://git-branch-2027-c-6u76.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="--i:2">
+        <div class="project-thumb thumb-3"><span class="p-num">Sheet 03 / 03</span></div>
+        <div class="project-body">
+          <h3>Anime Material Store</h3>
+          <p>A modern e-commerce concept for browsing and purchasing anime-related materials.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span>
+          </div>
+          <a href="https://game-g-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all-wrap reveal">
+      <a href="#" class="btn btn-primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEARNING JOURNEY ================= -->
+<section class="grid-paper">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">05 · My Learning Journey<span class="leaf"></span></div>
+      <h2>From discovery to growth</h2>
+      <p>The path I'm following as I build my career in technology.</p>
+    </div>
+
+    <div class="journey-track stagger">
+      <div class="j-step reveal" style="--i:0">
+        <div class="j-num">01</div>
+        <h4>Discover</h4>
+        <p>Started learning about technology and programming.</p>
+      </div>
+      <div class="j-step reveal" style="--i:1">
+        <div class="j-num">02</div>
+        <h4>Learn</h4>
+        <p>Developed knowledge of HTML, CSS, JavaScript, databases, and other technologies.</p>
+      </div>
+      <div class="j-step reveal" style="--i:2">
+        <div class="j-num">03</div>
+        <h4>Practice</h4>
+        <p>Built projects and practiced solving real problems.</p>
+      </div>
+      <div class="j-step reveal" style="--i:3">
+        <div class="j-num">04</div>
+        <h4>Grow</h4>
+        <p>Continue improving technical and professional skills to become a successful developer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GOALS ================= -->
+<section class="goals grid-dark" id="goals">
+  <div class="crop-mark cm-tl"></div>
+  <div class="crop-mark cm-tr"></div>
+  <div class="container" style="position:relative;">
+    <div class="section-head reveal">
+      <div class="eyebrow">06 · My Future Goals<span class="leaf"></span></div>
+      <h2>Where I'm headed</h2>
+      <p>The direction I'm building towards, one skill at a time.</p>
+    </div>
+
+    <div class="goals-grid stagger">
+      <div class="goal-card reveal" style="--i:0">
+        <span class="gtag">Career</span>
+        <h4>Become a professional Web Developer.</h4>
+      </div>
+      <div class="goal-card reveal" style="--i:1">
+        <span class="gtag">Technical</span>
+        <h4>Improve my programming and web development skills.</h4>
+      </div>
+      <div class="goal-card reveal" style="--i:2">
+        <span class="gtag">Personal</span>
+        <h4>Become more confident, responsible, and independent.</h4>
+      </div>
+      <div class="goal-card reveal" style="--i:3">
+        <span class="gtag">Professional</span>
+        <h4>Work on real-world projects and gain professional experience.</h4>
+      </div>
+    </div>
+
+    <div class="quote-block reveal">
+      <span class="quote-mark">// Field Note</span>
+      <p>Learn today. Build tomorrow.</p>
+      <div class="compass-wrap">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="42" stroke="#D4A24C" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="30" stroke="#D4A24C" stroke-width="1" stroke-dasharray="2 4"/>
+          <line x1="50" y1="4" x2="50" y2="14" stroke="#D4A24C" stroke-width="1.5"/>
+          <line x1="50" y1="86" x2="50" y2="96" stroke="#D4A24C" stroke-width="1.5"/>
+          <line x1="4" y1="50" x2="14" y2="50" stroke="#D4A24C" stroke-width="1.5"/>
+          <line x1="86" y1="50" x2="96" y2="50" stroke="#D4A24C" stroke-width="1.5"/>
+          <path d="M50 22L60 50L50 78L40 50Z" stroke="#F0C878" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="50" cy="50" r="4" fill="#D4A24C"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section class="grid-paper">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">07 · Achievements<span class="leaf"></span></div>
+      <h2>Milestones so far</h2>
+      <p>Progress I'm proud of on my journey at PNC.</p>
+    </div>
+
+    <div class="ach-grid stagger">
+      <div class="ach-card reveal" style="--i:0"><div class="ai">🏆</div><div class="al">Academic Growth</div></div>
+      <div class="ach-card reveal" style="--i:1"><div class="ai">📚</div><div class="al">Technical Learning</div></div>
+      <div class="ach-card reveal" style="--i:2"><div class="ai">💻</div><div class="al">Project Development</div></div>
+      <div class="ach-card reveal" style="--i:3"><div class="ai">🤝</div><div class="al">Team Collaboration</div></div>
+      <div class="ach-card reveal" style="--i:4"><div class="ai">🎯</div><div class="al">Personal Development</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow reveal">08 · Contact<span class="leaf"></span></div>
+      <h2 class="reveal" style="margin-bottom:10px;">Let's Connect</h2>
+      <p class="reveal" style="color:var(--muted);">Thank you for visiting my website. If you would like to know more about me, my projects, or my learning journey, feel free to contact me.</p>
+
+      <div class="contact-cards stagger">
+        <div class="c-card reveal" style="--i:0">
+          <div class="ci">📧</div>
+          <div class="cl">Email</div>
+          <div class="cv">menghak.sao2007@gmail.com</div>
+        </div>
+        <div class="c-card reveal" style="--i:1">
+          <div class="ci">📱</div>
+          <div class="cl">Phone</div>
+          <div class="cv">+855 71 55 66 458</div>
+        </div>
+        <div class="c-card reveal" style="--i:2">
+          <div class="ci">📍</div>
+          <div class="cl">Location</div>
+          <div class="cv">Cambodia</div>
+        </div>
+        <div class="c-card reveal" style="--i:3">
+          <div class="ci">🌐</div>
+          <div class="cl">Portfolio</div>
+          <div class="cv">Sao Menghak</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="contactForm" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="field" id="field-name">
+            <label for="cname">Your Name</label>
+            <input type="text" id="cname" name="name" placeholder="e.g. Sok Dara">
+            <span class="err"></span>
+          </div>
+          <div class="field" id="field-email">
+            <label for="cemail">Your Email</label>
+            <input type="email" id="cemail" name="email" placeholder="you@example.com">
+            <span class="err"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full" id="field-subject">
+            <label for="csubject">Subject</label>
+            <input type="text" id="csubject" name="subject" placeholder="What is this about?">
+            <span class="err"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full" id="field-message">
+            <label for="cmessage">Your Message</label>
+            <textarea id="cmessage" name="message" placeholder="Write your message here..."></textarea>
+            <span class="err"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+        <div class="form-success" id="formSuccess">✅ Your message has been sent successfully.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-top">
+    <div>
+      <div class="footer-brand">
+        <div class="brand-mark">SM</div>
         <div>
-          <h3>PNC</h3>
-          <span class="tag">Current Student</span>
-          <p>Developing knowledge and practical skills in technology, web development, communication, teamwork, and
-            professional development.</p>
+          <strong>Sao Menghak</strong><br>
+          <span>PNC STUDENT · FUTURE WEB DEVELOPER</span>
         </div>
       </div>
-
-      <div class="timeline stagger">
-        <div class="t-item reveal" style="--i:0">
-          <div class="t-dot"></div><span class="t-num">T-01</span>
-          <h4>Technical Training</h4>
-          <p>Building a strong foundation in computing fundamentals and technical practice at PNC.</p>
-        </div>
-        <div class="t-item reveal" style="--i:1">
-          <div class="t-dot"></div><span class="t-num">T-02</span>
-          <h4>Web Development</h4>
-          <p>Learning HTML, CSS, JavaScript and databases to build functional, modern websites.</p>
-        </div>
-        <div class="t-item reveal" style="--i:2">
-          <div class="t-dot"></div><span class="t-num">T-03</span>
-          <h4>Communication Skills</h4>
-          <p>Improving how I present ideas, collaborate, and communicate clearly in English and Khmer.</p>
-        </div>
-        <div class="t-item reveal" style="--i:3">
-          <div class="t-dot"></div><span class="t-num">T-04</span>
-          <h4>Teamwork</h4>
-          <p>Working alongside classmates on group projects to build stronger collaboration habits.</p>
-        </div>
-        <div class="t-item reveal" style="--i:4">
-          <div class="t-dot"></div><span class="t-num">T-05</span>
-          <h4>Professional Development</h4>
-          <p>Preparing for the workplace through soft-skills training and real-world project work.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SKILLS ================= -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">03 · Skills<span class="leaf"></span></div>
-        <h2>Skill Dashboard</h2>
-        <p>Technical and soft skills I have developed at PNC.</p>
-      </div>
-
-      <div class="skills-cols">
-        <div>
-          <div class="skill-item" data-pct="85">
-            <div class="skill-top"><span class="sname">HTML</span><span class="spct">85%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="80">
-            <div class="skill-top"><span class="sname">CSS</span><span class="spct">80%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="70">
-            <div class="skill-top"><span class="sname">JavaScript</span><span class="spct">70%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="65">
-            <div class="skill-top"><span class="sname">PHP</span><span class="spct">65%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="70">
-            <div class="skill-top"><span class="sname">MySQL</span><span class="spct">70%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="80">
-            <div class="skill-top"><span class="sname">Bootstrap</span><span class="spct">80%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-pct="65">
-            <div class="skill-top"><span class="sname">Python</span><span class="spct">65%</span></div>
-            <div class="bar-track">
-              <div class="bar-fill"></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="soft-title reveal">Soft Skills</h4>
-          <div class="soft-grid stagger">
-            <div class="soft-card reveal" style="--i:0">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
-                  <circle cx="10" cy="7" r="4" />
-                  <path d="M22.5 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16.5 3.13a4 4 0 0 1 0 7.75" />
-                </svg></div>
-              <div class="sl">Teamwork</div>
-            </div>
-            <div class="soft-card reveal" style="--i:1">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                </svg></div>
-              <div class="sl">Communication</div>
-            </div>
-            <div class="soft-card reveal" style="--i:2">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="13" r="8" />
-                  <path d="M12 9v4l2.5 2.5" />
-                  <path d="M9 1h6" />
-                  <path d="M12 1v3" />
-                </svg></div>
-              <div class="sl">Time Management</div>
-            </div>
-            <div class="soft-card reveal" style="--i:3">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9.5 2a4.5 4.5 0 0 0-4 6.5A4 4 0 0 0 4 12a4 4 0 0 0 2 3.46V17a3 3 0 0 0 3 3h1v-4.5a2.5 2.5 0 1 1 4 0V20h1a3 3 0 0 0 3-3v-1.54A4 4 0 0 0 20 12a4 4 0 0 0-1.5-3.5A4.5 4.5 0 0 0 14.5 2 4.48 4.48 0 0 0 12 2.76 4.48 4.48 0 0 0 9.5 2z" />
-                </svg></div>
-              <div class="sl">Problem Solving</div>
-            </div>
-            <div class="soft-card reveal" style="--i:4">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="9" />
-                  <circle cx="12" cy="12" r="5" />
-                  <circle cx="12" cy="12" r="1" />
-                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-                </svg></div>
-              <div class="sl">Responsibility</div>
-            </div>
-            <div class="soft-card reveal" style="--i:5">
-              <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M2 5.5A2.5 2.5 0 0 1 4.5 3H10a2 2 0 0 1 2 2 2 2 0 0 1 2-2h5.5A2.5 2.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 0 0-2 2 2 2 0 0 0-2-2H3.5A1.5 1.5 0 0 1 2 18.5v-13z" />
-                  <path d="M12 5v15" />
-                </svg></div>
-              <div class="sl">Self-Learning</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="grid-paper" id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">04 · My Projects<span class="leaf"></span></div>
-        <h2>Things I have learned and built</h2>
-        <p>A selection of projects from my learning journey at PNC.</p>
-      </div>
-
-      <div class="project-grid stagger">
-        <div class="project-card reveal" style="--i:0">
-          <div class="project-thumb thumb-1"><span class="p-num">Sheet 01 / 03</span></div>
-          <div class="project-body">
-            <h3>Student Information Website</h3>
-            <p>A modern responsive website designed to present student information and achievements.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
-                class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span>
-            </div>
-            <a href="#" class="project-link">View Project <span>→</span></a>
-          </div>
-        </div>
-
-        <div class="project-card reveal" style="--i:1">
-          <div class="project-thumb thumb-2"><span class="p-num">Sheet 02 / 03</span></div>
-          <div class="project-body">
-            <h3>Animal Guessing Game</h3>
-            <p>An interactive guessing game where users identify animals using real animal images and multiple-choice
-              answers.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
-                class="tech-tag">JavaScript</span>
-            </div>
-            <a href="https://git-branch-2027-c-6u76.vercel.app/" target="_blank" rel="noopener noreferrer"
-              class="project-link">View Project <span>→</span></a>
-          </div>
-        </div>
-
-        <div class="project-card reveal" style="--i:2">
-          <div class="project-thumb thumb-3"><span class="p-num">Sheet 03 / 03</span></div>
-          <div class="project-body">
-            <h3>Anime Material Store</h3>
-            <p>A modern e-commerce concept for browsing and purchasing anime-related materials.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
-                class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span>
-            </div>
-            <a href="https://game-g-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View
-              Project <span>→</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="view-all-wrap reveal">
-        <a href="#" class="btn btn-primary">View All Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= LEARNING JOURNEY ================= -->
-  <section class="grid-paper">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">05 · My Learning Journey<span class="leaf"></span></div>
-        <h2>From discovery to growth</h2>
-        <p>The path I'm following as I build my career in technology.</p>
-      </div>
-
-      <div class="journey-track stagger">
-        <div class="j-step reveal" style="--i:0">
-          <div class="j-num">01</div>
-          <h4>Discover</h4>
-          <p>Started learning about technology and programming.</p>
-        </div>
-        <div class="j-step reveal" style="--i:1">
-          <div class="j-num">02</div>
-          <h4>Learn</h4>
-          <p>Developed knowledge of HTML, CSS, JavaScript, databases, and other technologies.</p>
-        </div>
-        <div class="j-step reveal" style="--i:2">
-          <div class="j-num">03</div>
-          <h4>Practice</h4>
-          <p>Built projects and practiced solving real problems.</p>
-        </div>
-        <div class="j-step reveal" style="--i:3">
-          <div class="j-num">04</div>
-          <h4>Grow</h4>
-          <p>Continue improving technical and professional skills to become a successful developer.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= GOALS ================= -->
-  <section class="goals grid-dark" id="goals">
-    <div class="crop-mark cm-tl"></div>
-    <div class="crop-mark cm-tr"></div>
-    <div class="container" style="position:relative;">
-      <div class="section-head reveal">
-        <div class="eyebrow">06 · My Future Goals<span class="leaf"></span></div>
-        <h2>Where I'm headed</h2>
-        <p>The direction I'm building towards, one skill at a time.</p>
-      </div>
-
-      <div class="goals-grid stagger">
-        <div class="goal-card reveal" style="--i:0">
-          <span class="gtag">Career</span>
-          <h4>Become a professional Web Developer.</h4>
-        </div>
-        <div class="goal-card reveal" style="--i:1">
-          <span class="gtag">Technical</span>
-          <h4>Improve my programming and web development skills.</h4>
-        </div>
-        <div class="goal-card reveal" style="--i:2">
-          <span class="gtag">Personal</span>
-          <h4>Become more confident, responsible, and independent.</h4>
-        </div>
-        <div class="goal-card reveal" style="--i:3">
-          <span class="gtag">Professional</span>
-          <h4>Work on real-world projects and gain professional experience.</h4>
-        </div>
-      </div>
-
-      <div class="quote-block reveal">
-        <span class="quote-mark">// Field Note</span>
-        <p>Learn today. Build tomorrow.</p>
-        <div class="compass-wrap">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="42" stroke="#D4A24C" stroke-width="1.5" />
-            <circle cx="50" cy="50" r="30" stroke="#D4A24C" stroke-width="1" stroke-dasharray="2 4" />
-            <line x1="50" y1="4" x2="50" y2="14" stroke="#D4A24C" stroke-width="1.5" />
-            <line x1="50" y1="86" x2="50" y2="96" stroke="#D4A24C" stroke-width="1.5" />
-            <line x1="4" y1="50" x2="14" y2="50" stroke="#D4A24C" stroke-width="1.5" />
-            <line x1="86" y1="50" x2="96" y2="50" stroke="#D4A24C" stroke-width="1.5" />
-            <path d="M50 22L60 50L50 78L40 50Z" stroke="#F0C878" stroke-width="1.5" stroke-linejoin="round" />
-            <circle cx="50" cy="50" r="4" fill="#D4A24C" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ACHIEVEMENTS ================= -->
-  <section class="grid-paper">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">07 · Achievements<span class="leaf"></span></div>
-        <h2>Milestones so far</h2>
-        <p>Progress I'm proud of on my journey at PNC.</p>
-      </div>
-
-      <div class="ach-grid stagger">
-        <div class="ach-card reveal" style="--i:0">
-          <div class="ai">🏆</div>
-          <div class="al">Academic Growth</div>
-        </div>
-        <div class="ach-card reveal" style="--i:1">
-          <div class="ai">📚</div>
-          <div class="al">Technical Learning</div>
-        </div>
-        <div class="ach-card reveal" style="--i:2">
-          <div class="ai">💻</div>
-          <div class="al">Project Development</div>
-        </div>
-        <div class="ach-card reveal" style="--i:3">
-          <div class="ai">🤝</div>
-          <div class="al">Team Collaboration</div>
-        </div>
-        <div class="ach-card reveal" style="--i:4">
-          <div class="ai">🎯</div>
-          <div class="al">Personal Development</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="contact" id="contact">
-    <div class="container contact-grid">
-      <div>
-        <div class="eyebrow reveal">08 · Contact<span class="leaf"></span></div>
-        <h2 class="reveal" style="margin-bottom:10px;">Let's Connect</h2>
-        <p class="reveal" style="color:var(--muted);">Thank you for visiting my website. If you would like to know more
-          about me, my projects, or my learning journey, feel free to contact me.</p>
-
-        <div class="contact-cards stagger">
-          <div class="c-card reveal" style="--i:0">
-            <div class="ci">📧</div>
-            <div class="cl">Email</div>
-            <div class="cv">menghak.sao2007@gmail.com</div>
-          </div>
-          <div class="c-card reveal" style="--i:1">
-            <div class="ci">📱</div>
-            <div class="cl">Phone</div>
-            <div class="cv">+855 71 55 66 458</div>
-          </div>
-          <div class="c-card reveal" style="--i:2">
-            <div class="ci">📍</div>
-            <div class="cl">Location</div>
-            <div class="cv">Cambodia</div>
-          </div>
-          <div class="c-card reveal" style="--i:3">
-            <div class="ci">🌐</div>
-            <div class="cl">Portfolio</div>
-            <div class="cv">Sao Menghak</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-card reveal">
-        <form id="contactForm" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-row">
-            <div class="field" id="field-name">
-              <label for="cname">Your Name</label>
-              <input type="text" id="cname" name="name" placeholder="e.g. Sok Dara">
-              <span class="err"></span>
-            </div>
-            <div class="field" id="field-email">
-              <label for="cemail">Your Email</label>
-              <input type="email" id="cemail" name="email" placeholder="you@example.com">
-              <span class="err"></span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field full" id="field-subject">
-              <label for="csubject">Subject</label>
-              <input type="text" id="csubject" name="subject" placeholder="What is this about?">
-              <span class="err"></span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field full" id="field-message">
-              <label for="cmessage">Your Message</label>
-              <textarea id="cmessage" name="message" placeholder="Write your message here..."></textarea>
-              <span class="err"></span>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-          <div class="form-success" id="formSuccess">✅ Your message has been sent successfully.</div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="container footer-top">
-      <div>
-        <div class="footer-brand">
-          <div class="brand-mark">SM</div>
-          <div>
-            <strong>Sao Menghak</strong><br>
-            <span>PNC STUDENT · FUTURE WEB DEVELOPER</span>
-          </div>
-        </div>
-        <p class="footer-desc">Building modern digital experiences while growing as a developer, one project at a time.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h5>Navigation</h5>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#goals">Goals</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h5>Connect</h5>
-        <div class="social-row">
-          <a class="social-btn" href="https://github.com/Menghak-git" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-            </svg>
-          </a>
-          <a class="social-btn" href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-          </a>
-          <a class="social-btn" href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-          <a class="social-btn" href="https://t.me/hak_golden_m2" aria-label="Telegram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </a>
-        </div>
-      </div>
+      <p class="footer-desc">Building modern digital experiences while growing as a developer, one project at a time.</p>
     </div>
 
-    <div class="container footer-bottom">
-      <span>© 2026 Sao Menghak. All Rights Reserved.</span>
-      <span>Designed &amp; Developed by Sao Menghak</span>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#goals">Goals</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
 
-  <script>
-    // ---- Navbar scroll effect ----
-    const header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 30);
-    });
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <div class="social-row">
+        <a class="social-btn" href="https://github.com/Menghak-git" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a class="social-btn" href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a class="social-btn" href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a class="social-btn" href="https://t.me/hak_golden_m2" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-    // ---- Mobile menu ----
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
+  <div class="container footer-bottom">
+    <span>© 2026 Sao Menghak. All Rights Reserved.</span>
+    <span>Designed &amp; Developed by Sao Menghak</span>
+  </div>
+</footer>
 
-    function closeMenu() {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      overlay.classList.remove('open');
+<script>
+  // ---- Theme toggle (light / dark) ----
+  (function(){
+    const root = document.documentElement;
+    const toggles = [document.getElementById('themeToggleDesktop'), document.getElementById('themeToggleMobile')];
+
+    // Try to remember the user's choice for this browser session.
+    // Falls back gracefully if storage is unavailable (e.g. sandboxed preview).
+    function getSavedTheme(){
+      try { return localStorage.getItem('site-theme'); } catch(e){ return null; }
     }
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      overlay.classList.toggle('open');
+    function saveTheme(theme){
+      try { localStorage.setItem('site-theme', theme); } catch(e){ /* ignore */ }
+    }
+
+    function applyTheme(theme){
+      root.classList.toggle('light-theme', theme === 'light');
+      toggles.forEach(btn => btn && btn.setAttribute('aria-pressed', theme === 'light'));
+    }
+
+    const saved = getSavedTheme();
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+    toggles.forEach(btn => {
+      if(!btn) return;
+      btn.addEventListener('click', () => {
+        const nextTheme = root.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        saveTheme(nextTheme);
+      });
     });
-    overlay.addEventListener('click', closeMenu);
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  })();
 
-    // ---- CV download: real file, native <a download> handles it. No JS needed. ----
+  // ---- Navbar scroll effect ----
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
 
-    // ---- Scroll reveal ----
-    const revealEls = document.querySelectorAll('.reveal, .t-item');
-    const revealObserver = new IntersectionObserver((entries) => {
+  // ---- Mobile menu ----
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('overlay');
+
+  function closeMenu(){
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+  overlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // ---- CV download: real file, native <a download> handles it. No JS needed. ----
+
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal, .t-item');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ---- Photo curtain reveal (black comes in, then slides away) ----
+  const heroFrame = document.getElementById('heroPhotoFrame');
+  if(heroFrame){
+    window.addEventListener('load', () => {
+      setTimeout(() => heroFrame.classList.add('revealed'), 350);
+    });
+  }
+  const aboutFrame = document.getElementById('aboutPhotoFrame');
+  if(aboutFrame){
+    const photoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          revealObserver.unobserve(entry.target);
+        if(entry.isIntersecting){
+          setTimeout(() => entry.target.classList.add('revealed'), 150);
+          photoObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => revealObserver.observe(el));
+    }, {threshold:0.25});
+    photoObserver.observe(aboutFrame);
+  }
 
-    // ---- Photo curtain reveal (black comes in, then slides away) ----
-    const heroFrame = document.getElementById('heroPhotoFrame');
-    if (heroFrame) {
-      window.addEventListener('load', () => {
-        setTimeout(() => heroFrame.classList.add('revealed'), 350);
-      });
-    }
-    const aboutFrame = document.getElementById('aboutPhotoFrame');
-    if (aboutFrame) {
-      const photoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('revealed'), 150);
-            photoObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25 });
-      photoObserver.observe(aboutFrame);
-    }
-
-    // ---- Animated skill bars ----
-    const skillItems = document.querySelectorAll('.skill-item');
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const pct = entry.target.getAttribute('data-pct');
-          entry.target.querySelector('.bar-fill').style.width = pct + '%';
-          skillObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    skillItems.forEach(el => skillObserver.observe(el));
-
-    // ---- Contact form validation ----
-    const form = document.getElementById('contactForm');
-    const successMsg = document.getElementById('formSuccess');
-
-    function setError(fieldId, message) {
-      const field = document.getElementById(fieldId);
-      field.classList.toggle('invalid', !!message);
-      field.querySelector('.err').textContent = message || '';
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      successMsg.classList.remove('show');
-
-      const name = document.getElementById('cname').value.trim();
-      const email = document.getElementById('cemail').value.trim();
-      const subject = document.getElementById('csubject').value.trim();
-      const message = document.getElementById('cmessage').value.trim();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      let valid = true;
-
-      if (name.length < 2) { setError('field-name', 'Please enter your full name.'); valid = false; }
-      else setError('field-name', '');
-
-      if (!emailPattern.test(email)) { setError('field-email', 'Please enter a valid email address.'); valid = false; }
-      else setError('field-email', '');
-
-      if (subject.length < 3) { setError('field-subject', 'Please enter a subject (min 3 characters).'); valid = false; }
-      else setError('field-subject', '');
-
-      if (message.length < 10) { setError('field-message', 'Message should be at least 10 characters.'); valid = false; }
-      else setError('field-message', '');
-
-      if (!valid) return;
-
-      const submitBtn = form.querySelector('.form-submit');
-      const originalLabel = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      })
-        .then(response => {
-          if (response.ok) {
-            successMsg.textContent = '✅ Your message has been sent successfully.';
-            successMsg.classList.remove('show-error');
-            successMsg.classList.add('show');
-            form.reset();
-          } else {
-            successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
-            successMsg.classList.add('show', 'show-error');
-          }
-        })
-        .catch(() => {
-          successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
-          successMsg.classList.add('show', 'show-error');
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-          setTimeout(() => successMsg.classList.remove('show', 'show-error'), 5000);
-        });
+  // ---- Animated skill bars ----
+  const skillItems = document.querySelectorAll('.skill-item');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const pct = entry.target.getAttribute('data-pct');
+        entry.target.querySelector('.bar-fill').style.width = pct + '%';
+        skillObserver.unobserve(entry.target);
+      }
     });
+  }, {threshold:0.4});
+  skillItems.forEach(el => skillObserver.observe(el));
 
-    // ---- Falling snow (loops forever, no cap) ----
-    (function () {
-      const layer = document.getElementById('snowLayer');
-      if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // ---- Contact form validation ----
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
 
-      const FLAKE_COUNT = 60;
+  function setError(fieldId, message){
+    const field = document.getElementById(fieldId);
+    field.classList.toggle('invalid', !!message);
+    field.querySelector('.err').textContent = message || '';
+  }
 
-      function spawnFlake(initial) {
-        const flake = document.createElement('span');
-        flake.className = 'snowflake';
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    successMsg.classList.remove('show');
 
-        const depth = Math.random();                             // 0 = far, 1 = near
-        const size = (depth * 5 + 2).toFixed(1);                  // 2px - 7px (near flakes bigger)
-        const left = (Math.random() * 100).toFixed(2);            // 0% - 100%
-        const fallDuration = (14 - depth * 8).toFixed(2);         // near flakes fall faster (6s-14s)
-        const swayDuration = (Math.random() * 4 + 3).toFixed(2);  // 3s - 7s
-        const opacity = (depth * 0.5 + 0.4).toFixed(2);           // 0.4 - 0.9, near flakes brighter
-        const blur = (1.6 - depth * 1.4).toFixed(2);              // far flakes softer/hazier
-        const glow = (2 + depth * 6).toFixed(1);                  // near flakes glow more
-        const fallDelay = initial ? (Math.random() * -14).toFixed(2) : 0; // stagger on first load
+    const name = document.getElementById('cname').value.trim();
+    const email = document.getElementById('cemail').value.trim();
+    const subject = document.getElementById('csubject').value.trim();
+    const message = document.getElementById('cmessage').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        flake.style.width = size + 'px';
-        flake.style.height = size + 'px';
-        flake.style.left = left + '%';
-        flake.style.opacity = opacity;
-        flake.style.filter = 'blur(' + blur + 'px)';
-        flake.style.boxShadow = '0 0 ' + glow + 'px 1px rgba(255,255,255,.55), 0 0 2px rgba(255,255,255,.9)';
-        flake.style.animationDuration = fallDuration + 's, ' + swayDuration + 's';
-        flake.style.animationDelay = fallDelay + 's, 0s';
+    let valid = true;
 
-        layer.appendChild(flake);
+    if(name.length < 2){ setError('field-name', 'Please enter your full name.'); valid = false; }
+    else setError('field-name', '');
+
+    if(!emailPattern.test(email)){ setError('field-email', 'Please enter a valid email address.'); valid = false; }
+    else setError('field-email', '');
+
+    if(subject.length < 3){ setError('field-subject', 'Please enter a subject (min 3 characters).'); valid = false; }
+    else setError('field-subject', '');
+
+    if(message.length < 10){ setError('field-message', 'Message should be at least 10 characters.'); valid = false; }
+    else setError('field-message', '');
+
+    if(!valid) return;
+
+    const submitBtn = form.querySelector('.form-submit');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(response => {
+      if(response.ok){
+        successMsg.textContent = '✅ Your message has been sent successfully.';
+        successMsg.classList.remove('show-error');
+        successMsg.classList.add('show');
+        form.reset();
+      } else {
+        successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
+        successMsg.classList.add('show', 'show-error');
       }
+    })
+    .catch(() => {
+      successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
+      successMsg.classList.add('show', 'show-error');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      setTimeout(() => successMsg.classList.remove('show', 'show-error'), 5000);
+    });
+  });
 
-      // Seed the initial batch, staggered so it doesn't all start at once
-      for (let i = 0; i < FLAKE_COUNT; i++) {
-        spawnFlake(true);
-      }
-    })();
+  // ---- Falling snow (loops forever, no cap) ----
+  (function(){
+    const layer = document.getElementById('snowLayer');
+    if(!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // ---- Lightning strikes (random, loops forever) ----
-    (function () {
-      const layer = document.getElementById('lightningLayer');
-      const flash = document.getElementById('flashOverlay');
-      const bolts = [document.getElementById('boltA'), document.getElementById('boltB')];
-      if (!layer || !flash || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const FLAKE_COUNT = 60;
 
-      function restartAnim(el) {
-        el.classList.remove('strike');
-        void el.offsetWidth; // force reflow so the animation can restart
-        el.classList.add('strike');
-      }
+    function spawnFlake(initial){
+      const flake = document.createElement('span');
+      flake.className = 'snowflake';
 
-      function strike() {
-        const bolt = bolts[Math.floor(Math.random() * bolts.length)];
-        restartAnim(bolt);
-        restartAnim(flash);
+      const depth = Math.random();                             // 0 = far, 1 = near
+      const size = (depth * 5 + 2).toFixed(1);                  // 2px - 7px (near flakes bigger)
+      const left = (Math.random() * 100).toFixed(2);            // 0% - 100%
+      const fallDuration = (14 - depth * 8).toFixed(2);         // near flakes fall faster (6s-14s)
+      const swayDuration = (Math.random() * 4 + 3).toFixed(2);  // 3s - 7s
+      const opacity = (depth * 0.5 + 0.4).toFixed(2);           // 0.4 - 0.9, near flakes brighter
+      const blur = (1.6 - depth * 1.4).toFixed(2);              // far flakes softer/hazier
+      const glow = (2 + depth * 6).toFixed(1);                  // near flakes glow more
+      const fallDelay = initial ? (Math.random() * -14).toFixed(2) : 0; // stagger on first load
 
-        // Occasionally do a quick double-strike for realism
-        if (Math.random() < 0.3) {
-          setTimeout(() => {
-            const bolt2 = bolts[Math.floor(Math.random() * bolts.length)];
-            restartAnim(bolt2);
-            restartAnim(flash);
-          }, 220);
-        }
-      }
+      flake.style.width = size + 'px';
+      flake.style.height = size + 'px';
+      flake.style.left = left + '%';
+      flake.style.opacity = opacity;
+      flake.style.filter = 'blur(' + blur + 'px)';
+      flake.style.boxShadow = '0 0 ' + glow + 'px 1px rgba(255,255,255,.55), 0 0 2px rgba(255,255,255,.9)';
+      flake.style.animationDuration = fallDuration + 's, ' + swayDuration + 's';
+      flake.style.animationDelay = fallDelay + 's, 0s';
 
-      function scheduleNext() {
-        const delay = 3500 + Math.random() * 6500; // next strike in 3.5s - 10s
+      layer.appendChild(flake);
+    }
+
+    // Seed the initial batch, staggered so it doesn't all start at once
+    for(let i = 0; i < FLAKE_COUNT; i++){
+      spawnFlake(true);
+    }
+  })();
+
+  // ---- Lightning strikes (random, loops forever) ----
+  (function(){
+    const layer = document.getElementById('lightningLayer');
+    const flash = document.getElementById('flashOverlay');
+    const bolts = [document.getElementById('boltA'), document.getElementById('boltB')];
+    if(!layer || !flash || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function restartAnim(el){
+      el.classList.remove('strike');
+      void el.offsetWidth; // force reflow so the animation can restart
+      el.classList.add('strike');
+    }
+
+    function strike(){
+      const bolt = bolts[Math.floor(Math.random() * bolts.length)];
+      restartAnim(bolt);
+      restartAnim(flash);
+
+      // Occasionally do a quick double-strike for realism
+      if(Math.random() < 0.3){
         setTimeout(() => {
-          strike();
-          scheduleNext();
-        }, delay);
+          const bolt2 = bolts[Math.floor(Math.random() * bolts.length)];
+          restartAnim(bolt2);
+          restartAnim(flash);
+        }, 220);
       }
+    }
 
-      scheduleNext();
-    })();
-  </script>
+    function scheduleNext(){
+      const delay = 3500 + Math.random() * 6500; // next strike in 3.5s - 10s
+      setTimeout(() => {
+        strike();
+        scheduleNext();
+      }, delay);
+    }
+
+    scheduleNext();
+  })();
+</script>
 </body>
-
 </html>
