@@ -891,6 +891,9 @@
     </div>
 
     <div class="form-card reveal">
+      <!-- Paste ONE of these into action:
+           Formspree:    https://formspree.io/f/YOUR_FORM_ID
+           Apps Script:  https://script.google.com/macros/s/XXXX/exec  -->
       <form id="contactForm" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
           <div class="field" id="field-name">
@@ -1121,25 +1124,41 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    })
+    const endpoint = form.action || '';
+    const isPlaceholder = endpoint.includes('YOUR_FORM_ID') || endpoint.includes('PASTE_YOUR');
+    const isAppsScript = endpoint.includes('script.google.com');
+
+    function showResult(ok, text){
+      successMsg.textContent = text;
+      successMsg.classList.toggle('show-error', !ok);
+      successMsg.classList.add('show');
+    }
+
+    if(isPlaceholder){
+      showResult(false, '⚠️ Form is not connected yet. Add your Formspree or Google Apps Script URL in the form action.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      return;
+    }
+
+    // Google Apps Script: no CORS headers, so send url-encoded with no-cors
+    // Formspree (or similar): normal JSON response
+    const request = isAppsScript
+      ? fetch(endpoint, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+          .then(() => ({ ok: true }))
+      : fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+
+    request
     .then(response => {
       if(response.ok){
-        successMsg.textContent = '✅ Your message has been sent successfully.';
-        successMsg.classList.remove('show-error');
-        successMsg.classList.add('show');
+        showResult(true, '✅ Your message has been sent successfully.');
         form.reset();
       } else {
-        successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
-        successMsg.classList.add('show', 'show-error');
+        showResult(false, '⚠️ Something went wrong. Please try again or email me directly.');
       }
     })
     .catch(() => {
-      successMsg.textContent = '⚠️ Something went wrong. Please try again or email me directly.';
-      successMsg.classList.add('show', 'show-error');
+      showResult(false, '⚠️ Something went wrong. Please try again or email me directly.');
     })
     .finally(() => {
       submitBtn.disabled = false;
